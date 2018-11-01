@@ -6,11 +6,14 @@
 #+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
 #+OPTIONS: html-preamble:t html-postamble:t
 
-#+TITLE:   Surviving R: Avoiding common traps, Finding information, Trouble-shooting, Getting help
+# #+TITLE:   Surviving R: Avoiding common traps, Finding information, Trouble-shooting, Getting help
 #+DATE:	  {{{time(%B %d\, %Y)}}}
 #+AUTHOR:  Marie-Hélène Burle
 #+EMAIL:   msb2@sfu.ca
 
+* Surviving R
+
+** Avoiding common traps, Finding information, Trouble-shooting, Getting help
 
 *** Description
 
@@ -31,7 +34,8 @@ This workshop is open to current SFU students, staff, and faculty of all levels 
 
 *** Requirements
 
-Participants need to bring a laptop with: the latest R release[1] and the latest CRAN version of the package "tidyverse"[2].
+Participants need to bring a laptop with: the latest R release[fn:1] and the latest CRAN version of the package "tidyverse"[fn:2].
 
-[1] Download R from https://cran.r-project.org/ and install it on your machine
-[2] Install the tidyverse package by running `install.packages("tidyverse")` in R
+[fn:1] Download R from https://cran.r-project.org/ and install it on your machine
+
+[fn:2] Install the tidyverse package by running `install.packages("tidyverse")` in R
