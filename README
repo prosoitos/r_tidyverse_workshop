@@ -1,8 +1,20 @@
 #    -*- mode: org -*-
 
-Title: "Surviving R: Avoiding common traps, Finding information, Trouble-shooting, Getting help"
+#+OPTIONS: title:t date:t author:t email:t
+#+OPTIONS: toc:t h:6 num:nil |:t todo:nil
+#+OPTIONS: *:t -:t ::t <:t \n:t e:t creator:nil
+#+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
+#+OPTIONS: html-preamble:t html-postamble:t
 
-Description: Once a few basic concepts are clear and you know where to find information or how to ask for it, you can navigate R effectively. This workshop will bring you to this happy place.
+#+TITLE:   Surviving R: Avoiding common traps, Finding information, Trouble-shooting, Getting help
+#+DATE:	  {{{time(%B %d\, %Y)}}}
+#+AUTHOR:  Marie-Hélène Burle
+#+EMAIL:   msb2@sfu.ca
+
+
+*** Description
+
+Once a few basic concepts are clear and you know where to find information or how to ask for it, you can navigate R effectively. This workshop will bring you to this happy place.
 
 Subjects covered include:
 - Clarification of common misconceptions
@@ -13,9 +25,13 @@ Subjects covered include:
 - Where to go for help
 - How to properly ask for help: reprex, anonymization, and the culture of various forums
 
-Target audience: This workshop is open to people of all levels and will benefit anyone feeling a little confused in the R world or unsure where to find good R resources, how to ask for help with a reproducible example, and what to do when stuck.
+*** Target audience
 
-Requirements: Participants need to bring a laptop with: the latest R release[1] and the latest CRAN version of the package "tidyverse"[2].
+This workshop is open to current SFU students, staff, and faculty of all levels and will benefit anyone feeling a little confused in the R world or unsure where to find good R resources, how to ask for help with a reproducible example, and what to do when stuck.
+
+*** Requirements
+
+Participants need to bring a laptop with: the latest R release[1] and the latest CRAN version of the package "tidyverse"[2].
 
 [1] Download R from https://cran.r-project.org/ and install it on your machine
 [2] Install the tidyverse package by running `install.packages("tidyverse")` in R
