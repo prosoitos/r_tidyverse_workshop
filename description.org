@@ -1,0 +1,19 @@
+Title: "Surviving R: Avoiding common traps, Finding information, Trouble-shooting, Getting help"
+
+Description: Once a few basic concepts are clear and you know where to find information or how to ask for it, you can navigate R effectively. This workshop will bring you to this happy place.
+
+Subjects covered include:
+- Clarification of common misconceptions
+- Common traps
+- Where to find excellent and free resources to learn R
+- How to read R help files
+- How to troubleshoot your code
+- Where to go for help
+- How to properly ask for help: reprex, anonymization, and the culture of various forums
+
+Target audience: This workshop is open to people of all levels and will benefit anyone feeling a little confused in the R world or unsure where to find good R resources, how to ask for help with a reproducible example, and what to do when stuck.
+
+Requirements: Participants need to bring a laptop with: the latest R release[1] and the latest CRAN version of the package "tidyverse"[2].
+
+[1] Download R from https://cran.r-project.org/ and install it on your machine
+[2] Install the tidyverse package by running `install.packages("tidyverse")` in R
