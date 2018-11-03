@@ -42,4 +42,4 @@ The workshop webpage can be accessed [[https://github.com/prosoitos/surviving-r_
 
 [fn:1] Download R from https://cran.r-project.org/ and install it on your machine
 
-[fn:2] Install the tidyverse package by running install.packages("tidyverse") in R
+[fn:2] Install the tidyverse package by running @@html:<span style="background-color: gray">@@install.packages("tidyverse")@@html:</span>@@ in R
