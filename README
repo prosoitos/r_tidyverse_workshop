@@ -6,6 +6,8 @@
 #+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
 #+OPTIONS: html-preamble:t html-postamble:t
 
+#+PROPERTY: header-args:R :results output :exports code :tangle yes :comments link :eval no
+
 # #+TITLE:   Surviving R: Avoiding common traps, Finding information, Trouble-shooting, Getting help
 #+DATE:	  {{{time(%B %d\, %Y)}}}
 #+AUTHOR:  Marie-Hélène Burle
@@ -38,4 +40,4 @@ Participants need to bring a laptop with: the latest R release[fn:1] and the lat
 
 [fn:1] Download R from https://cran.r-project.org/ and install it on your machine
 
-[fn:2] Install the tidyverse package by running `install.packages("tidyverse")` in R
+[fn:2] Install the tidyverse package by running src_R[:eval no]{install.packages("tidyverse")} in R
