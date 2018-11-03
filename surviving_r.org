@@ -4,9 +4,9 @@
 #+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
 #+OPTIONS: html-preamble:t html-postamble:t
 
-#+PROPERTY: header-args:R :session R:help :eval no :results output :exports code :tangle yes :comments link
+#+PROPERTY: header-args:R :results output :exports code :tangle yes :comments link :eval no
 
-#+TITLE:   @@html:<span style="font-size:33px">@@Surviving R:@@html:</span><br>@@@@html:<span style="font-size:23px">@@Finding information, Trouble-shooting, Getting help@@html:</span>@@
+#+TITLE:   @@html:<span style="font-size:33px">@@Surviving R:@@html:</span><br>@@@@html:<span style="font-size:28px">@@Finding information, Trouble-shooting, Getting help@@html:</span>@@
 #+DATE:	  {{{time(%B %d\, %Y)}}}
 #+AUTHOR:  Marie-Hélène Burle
 #+EMAIL:   msb2@sfu.ca
@@ -14,28 +14,86 @@
 https://support.rstudio.com/hc/en-us/articles/200552336
 https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-do-one/5219
 
-* Common misconceptions
+* Clarifications
 
-- R
-- RStudio
-- Base R
-- tidyverse
-- core tidyverse
-- tibbles
+** R, RStudio, and the tidyverse
 
-* What is what in R?
+- R vs RStudio
 
-Data types, functions
+- Base R vs tidyverse (and tibbles vs data frames)
 
-* COMMENT Writing functions
+- Core tidyverse vs other tidyverse packages
 
-* Long vs wide format
+#+BEGIN_red
+R, RStudio, and the tidyverse all 3 very different things!
 
-* Working directory, working environment, workspace, history...
+Because many RStudio users never open R directly, they do not realize that R is doing the work. R needs to be updated regularly and you certainly cannot uninstall it.
 
-* File extensions
+- R is a software and computer language. Without it, nothing works
+- RStudio is an IDE (integrated development environment) allowing a nicer experience to work in R
+- the tidyverse is a set of R packages
 
-* Finding information to learn R
+So... you can use the tidyverse without using RStudio, you can use base R in RStudio, but you cannot use RStudio without using R.
+
+Since all 3 are totally distinct, they need to be updated independently:
+
+- updating RStudio will in no way bring you to an up to date version of R
+- updating R will not update the tidyverse
+- etc.
+#+END_red
+
+*** How do I update them?
+
+
+** What should I save?
+
+Change default options in RStudio.
+
+** What is what in R?
+
+- Data types
+
+- Data class
+
+- Functions
+
+#+BEGIN_red
+Learn the vocabulary!
+
+You really need it:
+
+1. to google the right terms and find answers to your problems
+2. to understand the help files
+#+END_red
+
+*** Writing functions
+
+** Working directory, working environment, history
+
+** Long vs wide format
+
+** What are all these weird dot files?
+
+Linux
+
+src_R[:eval no]{.RData}
+src_R[:eval no]{.Rds}
+src_R[:eval no]{.Rhistory}
+src_R[:eval no]{.Rproj}
+
+* Common sources of problems
+
+** Working environment and file locations
+
+** File extensions not visibles
+
+** Unexpected coercion
+
+** NA
+
+** Dates
+
+* Finding information
 
 ** In R itself
 
@@ -51,10 +109,10 @@ help.start()
 
 *** Packages
 
-To get information on a package called package-name, you can run:
+To get information on a package called <package>, you can run:
 
 #+BEGIN_SRC R
-package?package-name
+package?<package>
 #+END_SRC
 
 For instance src_R[:eval no]{package?data.table}.
@@ -62,23 +120,23 @@ For instance src_R[:eval no]{package?data.table}.
 And to get a list of the functions in a package, run:
 
 #+BEGIN_SRC R
-help(package = package-name)
+help(package = <package>)
 #+END_SRC
 
 For instance src_R[:eval no]{help(package = data.table)}.
 
 Note that, for this to work, the package doesn't need to be loaded. But of course, it does need to be installed on your machine.
 
-In the case of packages hosted on CRAN, a pdf containing the information for all the package functions can also be download from the web. Such package manuals are easy to find by googling "CRAN package-name".
+In the case of packages hosted on CRAN, a pdf containing the information for all the package functions can also be download from the web. Such package manuals are easy to find by googling "CRAN <package>".
 
 *** Functions
 
 Any serious package contains the documentation of every function in help files.
 
-You can get a detailed description of a function called function-name by running:
+You can get a detailed description of a function called <function> by running:
 
 #+BEGIN_SRC R
-?function-name
+?<function>
 #+END_SRC
 
 For instance src_R[:eval no]{?map}.
@@ -87,7 +145,7 @@ For this to work, the package containing this function needs to be loaded. So th
 
 **** How to make sense of the function help files?
 
-
+Let's walk through some help files together.
 
 *** Vignettes
 
@@ -95,10 +153,10 @@ Packages also sometime contain additional information in "vignettes": tutorials 
 
 **** List vignettes
 
-To list all the vignettes for a package called package-name, run:
+To list all the vignettes for a package called <package>, run:
 
 #+BEGIN_SRC R
-vignette(package = "package-name")
+vignette(package = "<package>")
 #+END_SRC
 
 For instance src_R[:eval no]{vignette(package = "dplyr")}.
@@ -122,10 +180,24 @@ vignette()
 Once you have found the name of a vignette pertaining to the topic you are interested in, you can open it with:
 
 #+BEGIN_SRC R
-vignette("vignette-name")
+vignette("<vignette>")
 #+END_SRC
 
 For instance src_R[:eval no]{vignette("two-table")}.
+
+*** Versions information
+
+R and all loaded packages:
+
+#+BEGIN_src R
+sessionInfo()
+#+END_src
+
+One package only
+
+#+BEGIN_src R
+packageVersion("<package>")
+#+END_src
 
 ** Online
 
@@ -197,8 +269,15 @@ The SFU library owns several classic books on R. Don't hesitate to talk to a lib
 
 * Trouble-shooting
 
-
-
+1. Look for typos (R is case sensitive)
+2. Re-start your R process
+3. Make sure your working directory is where you think it is and your files are where you think they are
+4. *Read the error message!*
+5. Google
+6. Help files of functions involved
+7. Hadley's books + RStudio cheatsheets
+8. Google some more
+9. Simplify your non running code until it starts running or alternatively start very simple and add elements until you break it
 
 * Getting help
 
@@ -234,7 +313,7 @@ The R community is full of people keen to help you: you will be amazed. But if y
 5. (optionally) does not contain more than is necessary to reproduce the problem.
 #+END_red
 
-Let's go over each point. The posted code...
+Let's go over each point. The posted code:
 
 **** 1. makes sense without being run
 
@@ -275,12 +354,16 @@ https://masalmon.eu/2018/07/22/wheretogethelp/
 
 http://www.cookbook-r.com/
 
-*** Data anonymisation
+**** Creating a (minimal) reproducible example
+
+
+
+**** Data anonymisation
 :PROPERTIES:
 :ID:       h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7
 :END:
 
-*** Recreating data
+**** Recreating data
 :PROPERTIES:
 :ID:       h:b409126d-9278-4647-aff2-1f18fe600857
 :END:
