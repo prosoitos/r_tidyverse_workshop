@@ -6,9 +6,6 @@
 #+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
 #+OPTIONS: html-preamble:t html-postamble:t
 
-#+PROPERTY: header-args:R :results output :exports code :tangle yes :comments link :eval no
-
-# #+TITLE:   Surviving R: Avoiding common traps, Finding information, Trouble-shooting, Getting help
 #+DATE:	  {{{time(%B %d\, %Y)}}}
 #+AUTHOR:  Marie-Hélène Burle
 #+EMAIL:   msb2@sfu.ca

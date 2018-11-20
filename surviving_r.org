@@ -6,10 +6,19 @@
 
 #+PROPERTY: header-args:R :results output :exports code :tangle yes :comments link :eval no
 
-#+TITLE:   @@html:<span style="font-size:33px">@@Surviving R:@@html:</span><br>@@@@html:<span style="font-size:28px">@@Finding information, Trouble-shooting, Getting help@@html:</span>@@
+#+TITLE:   @@html:<span style="font-size:33px">@@Surviving R:@@html:</span><br>@@@@html:<span style="font-size:28px">@@Finding information, trouble-shooting, getting help@@html:</span>@@
 #+DATE:	  {{{time(%B %d\, %Y)}}}
 #+AUTHOR:  Marie-Hélène Burle
 #+EMAIL:   msb2@sfu.ca
+
+
+how to make functions
+
+how to format posts in RStudio comm and SO
+
+how SO works 
+
+keyboard shortcuts in RStudio
 
 https://support.rstudio.com/hc/en-us/articles/200552336
 https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-do-one/5219
@@ -20,7 +29,7 @@ https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-
 
 - R vs RStudio
 
-- Base R vs tidyverse (and tibbles vs data frames)
+- Base R vs tidyverse (we will see the difference between tibbles vs data frames in a concrete example).
 
 - Core tidyverse vs other tidyverse packages
 
@@ -30,10 +39,10 @@ R, RStudio, and the tidyverse all 3 very different things!
 Because many RStudio users never open R directly, they do not realize that R is doing the work. R needs to be updated regularly and you certainly cannot uninstall it.
 
 - R is a software and computer language. Without it, nothing works
-- RStudio is an IDE (integrated development environment) allowing a nicer experience to work in R
+- RStudio is an IDE (integrated development environment) allowing a nicer experience while working in R
 - the tidyverse is a set of R packages
 
-So... you can use the tidyverse without using RStudio, you can use base R in RStudio, but you cannot use RStudio without using R.
+So... you can use the tidyverse without using RStudio, you can use RStudio without using any of the tidyverse packages, but you cannot use RStudio without using R. As soon as you use RStudio, you *are* using R.
 
 Since all 3 are totally distinct, they need to be updated independently:
 
@@ -43,7 +52,6 @@ Since all 3 are totally distinct, they need to be updated independently:
 #+END_red
 
 *** How do I update them?
-
 
 ** What should I save?
 
@@ -72,26 +80,42 @@ You really need it:
 
 ** Long vs wide format
 
+We will see an example of this later.
+
 ** What are all these weird dot files?
 
-Linux
+Linux-style configuration files.
 
-src_R[:eval no]{.RData}
+src_R[:eval no]{.RData}, src_R[:eval no]{.Rda}
 src_R[:eval no]{.Rds}
 src_R[:eval no]{.Rhistory}
 src_R[:eval no]{.Rproj}
 
 * Common sources of problems
 
+** Problem installing packages
+
+Run src_R[:eval no]{install.packages()} directly in R (not RStudio), in a session with administrative privilege.
+
 ** Working environment and file locations
 
-** File extensions not visibles
+** File extensions not visible
+
+** Transformation not saved in an object
 
 ** Unexpected coercion
 
+src_R[:eval no]{str()} is your friend.
+
 ** NA
 
+Think about what they mean:
+- your missing data might not be true NA
+- different NA mean different things and need to be handled differently
+
 ** Dates
+
+We will see an example soon.
 
 * Finding information
 
@@ -209,6 +233,16 @@ Several excellent books on R are-on top of their paper version-available as [[ht
 
 The book [[http://r4ds.had.co.nz/index.html][R for Data Science by Garrett Grolemund and Hadley Wickham]] is a must read for all beginner/intermediate R users, as well as advanced users not familiar with the tidyverse. This book will get you started with good habits and is an excellent introduction to R.
 
+Go to this book right now (you can find it by googling "r for data science") and bookmark the following chapters:
+
+- 3 Data visualisation
+- 5 Data transformation
+- 10 Tibbles
+- 11.3.4 Dates, date-times, and times
+- 12.3.1 Gathering
+- 18 Pipes
+- 20 Vectors
+
 **** Writing readable and well-formatted code
 
 While syntax matters greatly in code execution (e.g. missing quotes, commas, or parenthesis will affect the meaning of your code), R will equally run formatted and non-formatted code.
@@ -236,6 +270,14 @@ The tutorials [[https://data.cdrc.ac.uk/tutorial/an-introduction-to-spatial-data
 *** Cheatsheets
 
 Who doesn't love cheatsheets? Good news: RStudio and others created [[https://www.rstudio.com/resources/cheatsheets/][great cheatsheets]] on the tidyverse and a few other packages. If you use the tidyverse, those are absolute must have.
+
+Go to that page right now (you can find it by googling "rstudio cheatsheet") and download:
+
+- Work with Strings Cheat Sheet
+- Data Import Cheat Sheet
+- Data Transformation Cheat Sheet
+- RStudio IDE Cheat Sheet
+- Data Visualization Cheat Sheet
 
 *** Other online resources
 
@@ -269,23 +311,29 @@ The SFU library owns several classic books on R. Don't hesitate to talk to a lib
 
 * Trouble-shooting
 
+#+BEGIN_red
 1. Look for typos (R is case sensitive)
 2. Re-start your R process
 3. Make sure your working directory is where you think it is and your files are where you think they are
-4. *Read the error message!*
+4. *Read the error messages*
 5. Google
 6. Help files of functions involved
 7. Hadley's books + RStudio cheatsheets
 8. Google some more
 9. Simplify your non running code until it starts running or alternatively start very simple and add elements until you break it
+#+END_red
 
 * Getting help
 
 ** Where to ask for help
 
+*** At SFU
+
+The SFU Research Commons offers one-on-one [[https://www.lib.sfu.ca/about/branches-depts/rc/services/consultations#r-help-and-consultations][consultations]] to help you with your R code.
+
 *** Online
 
-R has a wonderful community.
+R has a wonderful community. But different sites have different cultures and you should familiarise yourself with a forum before posting to it.
 
 - so
 - rsc
@@ -294,10 +342,6 @@ R has a wonderful community.
 - mailing lists
 
 - following the hashtag [[https://twitter.com/search?q=%23rstats&src=typd][#rstats on twitter]]
-
-*** At SFU
-
-The SFU Research Commons offers one-on-one [[https://www.lib.sfu.ca/about/branches-depts/rc/services/consultations#r-help-and-consultations][consultations]] to help you with your R code.
 
 ** How to ask for help
 
@@ -337,8 +381,7 @@ While not absolutely necessary, reducing your code to the simplest and smallest 
 
 *** How do I follow the golden rules?
 
-Hadley Wickham [[http://adv-r.had.co.nz/Reproducibility.html][How to write a reproducible example]] 
-Stack Overflow [[https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example][How to make a great R reproducible example?]]
+Here are some extremely helpful links, but we will go over an example together.
 
 https://support.rstudio.com/hc/en-us/articles/200552336
 
@@ -356,40 +399,24 @@ http://www.cookbook-r.com/
 
 **** Creating a (minimal) reproducible example
 
-
+The accepted answer to the very popular question [[https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example][how to make a great R reproducible example?]] on the site [[https://stackoverflow.com][Stack Overflow]] gives all the characteristics of a minimal reproducible example.
 
 **** Data anonymisation
 :PROPERTIES:
 :ID:       h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7
 :END:
 
+The package [[https://cran.r-project.org/web/packages/anonymizer/index.html][anonymizer]] allows to anonymise sensitive information.
+
 **** Recreating data
 :PROPERTIES:
 :ID:       h:b409126d-9278-4647-aff2-1f18fe600857
 :END:
 
-
- dput() output.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Hadley Wickham explains [[http://adv-r.had.co.nz/Reproducibility.html][how to write a reproducible example]] using src_R[:eval no]{dput()} in [[http://adv-r.had.co.nz/][his first version of Advanced R]].
 
 
 
 spaces
 special characters
-file extensions visible
+
