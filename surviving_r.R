@@ -3,6 +3,8 @@
 library(tidyverse)
 library(magrittr)
 library(here)
+library(sessioninfo)
+library(anonymizer)
 
 ## * How to get information
 
@@ -24,6 +26,8 @@ vignette("programming")
 
 sessionInfo()
 
+session_info()
+
 packageVersion("dplyr")
 
 ## * Let's play with some data
@@ -39,10 +43,12 @@ df <- read.csv(here("count_data.csv"))
 df
 
 head(df)
-## Look how the variable names got changed
+
+Notice how the variable names got changed
 
 str(df)
-## ugh... factors?...
+
+ugh... factors?...
 
 df <- read.csv(here("count_data.csv"), stringsAsFactor = F)
 
@@ -60,93 +66,95 @@ tbl
 
 tbl <- read_csv(here("count_data.csv"))
 
-## Exercise: look at the stringr cheatsheet and try to find a function that will allow us to replace all "-" and " " by "_"
+Exercise: look at the stringr cheatsheet and try to find a function that will allow us to replace all "-" and " " by "_"
 
-names(tbl) %<>% str_replace_all("-| ", "_")
+## names(tbl) %<>% str_replace_all("-| ", "_")
 
-tbl
+## tbl
 
 ## ** Dates
 
 ## *** date3
 
-## Exercise: go to section "11.3.4 Dates, date-times, and times" of "R for data science" and try to parse date3 into a standard R date format
+Exercise: go to section "11.3.4 Dates, date-times, and times" of "R for data science" and try to parse date3 into a standard R date format
 
-tbl$date3 %<>% parse_date("%y/%m/%d")
+## tbl$date3 %<>% parse_date("%y/%m/%d")
 
-tbl
+## tbl
 
 ## *** date4
 
 tbl$date4 %<>% as.character
 
 tbl
-## ugh... not exactly working...
 
-## Exercise: look at the help file for `read_csv` and try to find a solution to import date4 as character.
-## Ideally, since we have already done some transformations on tbl, create a new tibble, then replace date4 of tbl by the new date4 of your new tibble
+ugh... not exactly working...
 
-?read_csv
+Exercise: look at the help file for `read_csv` and try to find a solution to import date4 as character.
+Ideally, since we have already done some transformations on tbl, create a new tibble, then replace date4 of tbl by the new date4 of your new tibble
 
-tbl_date4 <- read_csv("count_data.csv", col_types = "---c-----")
+## ?read_csv
 
-tbl_date4
+## tbl_date4 <- read_csv("count_data.csv", col_types = "---c-----")
 
-tbl$date4 <- tbl_date4$date4
+## tbl_date4
 
-tbl
+## tbl$date4 <- tbl_date4$date4
 
-## Exercise: now parse date4 to date. Go back to "11.3.4 Dates, date-times, and times" of "R for data science" if you need.
+## tbl
 
-tbl$date4 %<>% parse_date("%Y/%d/%m")
+Exercise: now parse date4 to date. Go back to "11.3.4 Dates, date-times, and times" of "R for data science" if you need.
 
-tbl
+## tbl$date4 %<>% parse_date("%Y/%d/%m")
 
-## Exercise: look at the "Data Transformation" cheatsheet and
-## 1. remove date2, date3, and date4
-## 2. rename date1 to date
+## tbl
 
-tbl %<>% select(- c(2:4)) %>%
-  rename(date = date1)
+Exercise: look at the "Data Transformation" cheatsheet and
+1. remove date2, date3, and date4
+2. rename date1 to date
 
-tbl
+## tbl %<>% select(- c(2:4)) %>%
+##   rename(date = date1)
 
-## Exercise: in a single graph, plot the number of individuals over time for each of the species.
-## Note: use the "Data Visualization" cheatsheet if you need.
+## tbl
 
-tbl_long <-
-  tbl %>%
-  gather("species", "abundance", - 1)
+Exercise: in a single graph, plot the number of individuals over time for each of the species.
+Note: use the "Data Visualization" cheatsheet if you need.
 
-tbl_long
+## tbl_long <-
+##   tbl %>%
+##   gather("species", "abundance", - 1)
 
-tbl_long %>% ggplot(aes(date, abundance)) +
-  geom_line(aes(color = species))
+## tbl_long
+
+## tbl_long %>% ggplot(aes(date, abundance)) +
+##   geom_line(aes(color = species))
   
 ## * Making a reproducible example
 
-## Imagine that you want to get the total across the whole season for each species.
-## This is what you do
+Imagine that you want to get the total across the whole season for each species.
+
+This is what you do
 
 tbl_long %>%
   group_by(species) %>%
   summarise(sum())
 
-## Oh no...
+Oh no...
 
-## You cannot understand why this is not working, so you decide to post a question on the RStudio Community website.
+You cannot understand why this is not working, so you decide to post a question on the RStudio Community website.
 
 ## ** The reprex package
 
-## Here comes the package "reprex", with its main function "reprex". You probably do not want to have "library(reprex)" in your script. But you can use "reprex::reprex()".
+Here comes the package "reprex", with its main function "reprex". You probably do not want to have "library(reprex)" in your script. But you can use "reprex::reprex()".
 
-## To use it, copy the code to your clipboard, and run the function in the console.
+To use it, copy the code to your clipboard, and run the function in the console.
 
 tbl_long %>%
   group_by(species) %>%
   summarise(sum())
 
-## Oh no... The pipe is not recognized. Why? You have to load the libraries in your reprex. Let us try again.
+Oh no... The pipe is not recognized. Why? You have to load the libraries in your reprex. Let us try again.
 
 library(tidyverse)
 
@@ -154,13 +162,13 @@ tbl_long %>%
   group_by(species) %>%
   summarise(sum())
 
-## Uh oh... we also need to load the data...
+Uh oh... we also need to load the data...
 
 ## *** How to provide data for a reprex
 
 ## **** Using dput()
 
-## Do not upload a .csv file nor a .rds object somewhere on the web to be downloaded. People hate downloading stuff and it is likely that you will not get help or be asked to produce a reprex instead... On Stack Overflow, you might even get a few downvotes.
+Do not upload a .csv file nor a .rds object somewhere on the web to be downloaded. People hate downloading stuff and it is likely that you will not get help or be asked to produce a reprex instead... On Stack Overflow, you might even get a few downvotes.
 
 dput(tbl_long)
 
@@ -275,119 +283,123 @@ test <- structure(
 
 test
 
-## It works. Good luck not getting any downvotes posting a question on Stack Overflow that would have this though...
+It works. But good luck not getting any downvotes posting a question on Stack Overflow that would include this code though...
 
 ## *** Removing as much as possible from the data before using dput()
 
-## Remember what our problem was.
+Remember what our problem was.
 
 tbl_long %>%
   group_by(species) %>%
   summarise(sum())
 
-## We probably do not need the whole tibble to reproduce the problem.
+We probably do not need the whole tibble to reproduce the problem.
 
-## Exercise: remove as much from the data as possible and simplify the names as much as possible while keeping the problem. Remember to use the dplyr cheatsheet or Chapter 5 "Data transformation" from "R for data science" if you need.
+Exercise: remove as much from the data as possible and simplify the names as much as possible while keeping the problem. Remember to use the dplyr cheatsheet or Chapter 5 "Data transformation" from "R for data science" if you need.
 
-data <- tbl_long
+## data <- tbl_long
 
 ## simplify names
-data$species <- rep(letters[1:5], each = 44)
 
-data
+## data$species <- rep(letters[1:5], each = 44)
+
+## data
 
 ## select only 3 species and 2 rows per species and get rid of the date variable
-data %<>%
-  select(- 1) %>% 
-  filter(species %in% letters[1:3]) %>% 
-  group_by(species) %>%
-  slice(1:2) %>%
-  ungroup()
 
-data
+## data %<>%
+##   select(- 1) %>% 
+##   filter(species %in% letters[1:3]) %>% 
+##   group_by(species) %>%
+##   slice(1:2) %>%
+##   ungroup()
+
+## data
 
 ## Let us see if our problem is still there
 
-data %>%
-  group_by(species) %>%
-  summarise(sum())
+## data %>%
+##   group_by(species) %>%
+##   summarise(sum())
 
 ## Yes. Good. So now, we can use dput() and it will not look as crazy.
 
-## Exercise: use dput() and reprex::reprex() to prepare a question ready to post on the RStudio Community forum.
+Exercise: use dput() and reprex::reprex() to prepare a question ready to post on the RStudio Community forum.
 
 ## First run this in the console to get the output
-dput(data)
+
+## dput(data)
 
 ## Then copy the code below and run reprex::reprex() in the console 
-library(tidyverse)
 
-data <- structure(list(
-  species = c("a", "a", "b", "b", "c", "c"),
-  abundance = c(5L, 8L, 1L, 0L, 1L, 2L)),
-  class = c("tbl_df", "tbl", "data.frame"),
-  row.names = c(NA, -6L)
-  )
+## library(tidyverse)
 
-data %>%
-  group_by(species) %>%
-  summarise(sum())
+## data <- structure(list(
+##   species = c("a", "a", "b", "b", "c", "c"),
+##   abundance = c(5L, 8L, 1L, 0L, 1L, 2L)),
+##   class = c("tbl_df", "tbl", "data.frame"),
+##   row.names = c(NA, -6L)
+##   )
+
+## data %>%
+##   group_by(species) %>%
+##   summarise(sum())
 
 ## Hooray. Now you can paste this directly into the RStudio Community forum or any other website which accepts markdown markup. For Stack Overflow, instead of reprex::reprex(), use reprex::reprex(venue = "so").
 
 ## *** Creating data
 
-## You might want to simply create fake data instead of using bits of your actual data. Sometimes this is faster and simpler.
+You might want to simply create fake data instead of using bits of your actual data. Sometimes this is faster and simpler.
 
-## Exercise: create a new tibble similar to the data tibble from scratch.
-## Hint: functions very useful to create toy dtasets include: sample(), rep(), and rnorm(). And use google when you do not know how to do something.
+Exercise: create a new tibble similar to the data tibble from scratch.
+Hint: functions very useful to create toy dtasets include: sample(), rep(), and rnorm(). And use google when you do not know how to do something.
 
-data <- tibble(
-  species = rep(letters[1:3], each = 2),
-  abundance = sample(0:10, 6, replace = T)
-)
+## data <- tibble(
+##   species = rep(letters[1:3], each = 2),
+##   abundance = sample(0:10, 6, replace = T)
+## )
 
 ## Let us make sure this reproduces our problem
 
-data %>%
-  group_by(species) %>%
-  summarise(sum())
+## data %>%
+##   group_by(species) %>%
+##   summarise(sum())
 
 ## Good.
 
-## Exercise: write a reprex using this method of producing the data.
+Exercise: write a reprex using this method of producing the data.
 
-library(tidyverse)
+## library(tidyverse)
 
-data <- tibble(
-  species = rep(letters[1:3], each = 2),
-  abundance = sample(0:10, 6, replace = T)
-)
+## data <- tibble(
+##   species = rep(letters[1:3], each = 2),
+##   abundance = sample(0:10, 6, replace = T)
+## )
 
-data %>%
-  group_by(species) %>%
-  summarise(sum())
+## data %>%
+##   group_by(species) %>%
+##   summarise(sum())
 
-## Exercise: look at the dplyr cheatsheet and find out why our code is not working.
+Exercise: look at the dplyr cheatsheet and find out why our code is not working.
  
-data %>%
-  group_by(species) %>%
-  summarise(sum(abundance))
+## data %>%
+##   group_by(species) %>%
+##   summarise(sum(abundance))
 
 ## ** Anonymising data
 
-## Let us imagine now that our data contains sensitive information. This can be personal information, government data, etc. Or maybe we simply do not wish to make our data useable when we post it along with our paper or while we ask for help. We can anonymize the data ourselves as we just did by renaming the species ourselves. But when lots of data has to be anonymized, this can be very tedious. 
+Let us imagine now that our data contains sensitive information. This can be personal information, government data, etc. Or maybe we simply do not wish to make our data useable when we post it along with our paper or while we ask for help. We can anonymize the data ourselves as we just did by renaming the species ourselves. But when lots of data has to be anonymized, this can be very tedious. 
 
-## Exercise: look at the package anonymizer and try to anonymize the column "species" of our "tbl_long" tibble.
+Exercise: look at the package anonymizer and try to anonymize the column "species" of our "tbl_long" tibble.
 
-tbl_long_anonym <- tbl_long
+## tbl_long_anonym <- tbl_long
 
-tbl_long_anonym$species %<>% anonymize(.algo = "crc32")
+## tbl_long_anonym$species %<>% anonymize(.algo = "crc32")
 
-table(tbl_long$species)
+## table(tbl_long$species)
 
-table(tbl_long_anonym$species)
+## table(tbl_long_anonym$species)
 
-unique(tbl_long$species)
+## unique(tbl_long$species)
 
-unique(tbl_long_anonym$species)
+## unique(tbl_long_anonym$species)
