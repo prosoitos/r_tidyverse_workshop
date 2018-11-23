@@ -53,7 +53,18 @@ Since all 3 are totally distinct, they need to be updated independently:
 
 *** How do I update them?
 
-** What should I save?
+** Working directory, working environment, history
+
+*** What are all these weird dot files?
+
+Linux-style configuration files.
+
+src_R[:eval no]{.RData}, src_R[:eval no]{.Rda}
+src_R[:eval no]{.Rds}
+src_R[:eval no]{.Rhistory}
+src_R[:eval no]{.Rproj}
+
+*** What should I save?
 
 Change default options in RStudio.
 
@@ -76,20 +87,7 @@ You really need it:
 
 *** Writing functions
 
-** Working directory, working environment, history
-
 ** Long vs wide format
-
-We will see an example of this later.
-
-** What are all these weird dot files?
-
-Linux-style configuration files.
-
-src_R[:eval no]{.RData}, src_R[:eval no]{.Rda}
-src_R[:eval no]{.Rds}
-src_R[:eval no]{.Rhistory}
-src_R[:eval no]{.Rproj}
 
 * Common sources of problems
 
@@ -99,7 +97,7 @@ Run src_R[:eval no]{install.packages()} directly in R (not RStudio), in a sessio
 
 ** Working environment and file locations
 
-** File extensions not visible
+** File extensions not visible in finder or windows explorer
 
 ** Transformation not saved in an object
 
@@ -114,8 +112,6 @@ Think about what they mean:
 - different NA mean different things and need to be handled differently
 
 ** Dates
-
-We will see an example soon.
 
 * Finding information
 
@@ -311,17 +307,30 @@ The SFU library owns several classic books on R. Don't hesitate to talk to a lib
 
 * Trouble-shooting
 
+Make a list
+
 #+BEGIN_red
-1. Look for typos (R is case sensitive)
-2. Re-start your R process
-3. Make sure your working directory is where you think it is and your files are where you think they are
-4. *Read the error messages*
-5. Google
-6. Help files of functions involved
-7. Hadley's books + RStudio cheatsheets
-8. Google some more
-9. Simplify your non running code until it starts running or alternatively start very simple and add elements until you break it
+1. *Read the error message*
+2. Look for typos (R is case sensitive)
+3. Re-start your R process
+4. Make sure your working directory is where you think it is and your files are where you think they are
+5. Update R, RStudio if you use it, and your packages
+6. Look at the help files of the functions involved
+7. Google using judicious keywords
+8. If relevant, look for explanations and examples in Hadley's books and/or RStudio cheatsheets
+9. Simplify your non running code until it starts running or alternatively start very simple and add elements until the code breaks
 #+END_red
+
+If, after doing all of these, you are stick stuck, then ask for help. Here are a number of options:
+
+#+BEGIN_red
+- ask your supervisor
+- ask your peers
+- book a consultation with an R peer at the Research Commons
+- post a question in Stack Overflow or the RStudio Community website
+#+END_red
+
+If you decide to go for the last option, *make a reproducible example first* or you will get your head chopped off.
 
 * Getting help
 
