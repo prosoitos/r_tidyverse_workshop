@@ -1,5 +1,5 @@
 #+OPTIONS: title:t date:t author:t email:nil
-#+OPTIONS: toc:t h:6 num:nil |:t todo:nil
+#+OPTIONS: toc:1 h:6 num:nil |:t todo:nil
 #+OPTIONS: *:t -:t ::t <:t \n:t e:t creator:nil
 #+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
 #+OPTIONS: html-preamble:t html-postamble:t
@@ -11,14 +11,14 @@
 #+AUTHOR:  Marie-Hélène Burle
 #+EMAIL:   msb2@sfu.ca
 
-keyboard shortcuts in RStudio
+# keyboard shortcuts in RStudio
 
-https://support.rstudio.com/hc/en-us/articles/200552336
-https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-do-one/5219
+# https://support.rstudio.com/hc/en-us/articles/200552336
+# https://community.rstudio.com/t/faq-whats-a-reproducible-example-reprex-and-how-do-i-do-one/5219
 
 * Clarifications
 
-**** R, RStudio, and the tidyverse
+*** R, RStudio, and the tidyverse
 
 - R vs RStudio
 
@@ -36,32 +36,48 @@ Because many RStudio users never open R directly, they do not realize that R is 
 - the tidyverse is a set of R packages
 
 So... you can use the tidyverse without using RStudio, you can use RStudio without using any of the tidyverse packages, but you cannot use RStudio without using R. As soon as you use RStudio, you *are* using R.
+#+END_red
+
+**** Updating
 
 Since all 3 are totally distinct, they need to be updated independently:
 
+#+BEGIN_red
 - updating RStudio will in no way bring you to an up to date version of R
 - updating R will not update the tidyverse
 - etc.
 #+END_red
 
-***** How do I update them?
+#+BEGIN_vertbar
+Your task: update R, RStudio (if you use it), and all your packages
+#+END_vertbar
 
-**** Working directory, working environment, history
+#+BEGIN_quote
+*Warning:* there is always a risk to break something with updates. Do them when you have time, *don't do them* just before an important event during which you will need R.
+#+END_quote
 
-***** What are all these weird dot files?
+If you don't want to take this risk now, then don't! but do your updates when you get home.
 
-Linux-style configuration files.
+Some packages will not install or update unless you have administrative privilege:
 
-src_R[:eval no]{.RData}, src_R[:eval no]{.Rda}
+Run src_R[:eval no]{install.packages()} directly in R (not RStudio), in a session with administrative privilege.
+
+*** Working directory, working environment, history
+
+**** What are all these weird dot files?
+
+src_R[:eval no]{.RData}/src_R[:eval no]{.Rda}
 src_R[:eval no]{.Rds}
 src_R[:eval no]{.Rhistory}
 src_R[:eval no]{.Rproj}
 
-***** What should I save?
+**** What should I save?
 
-Change default options in RStudio.
+#+BEGIN_vertbar
+Change your RStudio default options now
+#+END_vertbar
 
-**** What is what in R?
+*** What is what in R?
 
 - Data types
 
@@ -78,41 +94,37 @@ You really need it:
 2. to understand the help files
 #+END_red
 
-***** Writing functions
-
-**** Long vs wide format
-
 * Common sources of problems
 
-**** Problem installing packages
+- Working environment and file locations
 
-Run src_R[:eval no]{install.packages()} directly in R (not RStudio), in a session with administrative privilege.
+  Where is R running? You might not be where you think you are...
 
-**** Working environment and file locations
+- File extensions not visible in finder or windows explorer
 
-**** File extensions not visible in finder or windows explorer
+#+BEGIN_vertbar
+Go to Finder or Windows explorer now and make your file extensions visible
+#+END_vertbar
 
-**** Transformation not saved in an object
+- Transformation not saved in an object
 
-**** Unexpected coercion
+- Unexpected coercion
 
-src_R[:eval no]{str()} is your friend.
+  src_R[:eval no]{str()} is your friend.
 
-**** NA
+- NA
 
-Think about what they mean:
-- your missing data might not be true NA
-- different NA mean different things and need to be handled differently
-
-**** Dates
+  Think about what they mean:
+   - your missing data might not be true NA
+   - different NA mean different things and need to be handled differently
 
 * Finding information
 
-**** In R itself
+** In R itself
 
 R, as well as any package you have installed, comes with a lot of documentation. This can be invaluable if you do not have internet access.
 
-***** Manuals
+*** Manuals
 
 General manuals on R can be found by running:
 
@@ -120,7 +132,7 @@ General manuals on R can be found by running:
 help.start()
 #+END_SRC
 
-***** Packages
+*** Packages
 
 To get information on a package called <package>, you can run:
 
@@ -142,7 +154,7 @@ Note that, for this to work, the package doesn't need to be loaded. But of cours
 
 In the case of packages hosted on CRAN, a pdf containing the information for all the package functions can also be download from the web. Such package manuals are easy to find by googling "CRAN <package>".
 
-***** Functions
+*** Functions
 
 Any serious package contains the documentation of every function in help files.
 
@@ -156,15 +168,15 @@ For instance src_R[:eval no]{?map}.
 
 For this to work, the package containing this function needs to be loaded. So the above line will only work if you have previously loaded the package src_R[:eval no]{purrr}. Alternatively, you can run src_R[:eval no]{?purrr::map}.
 
-****** How to make sense of the function help files?
+**** How to make sense of the function help files?
 
 Let's walk through some help files together.
 
-***** Vignettes
+*** Vignettes
 
 Packages also sometime contain additional information in "vignettes": tutorials on how to use the package.
 
-****** List vignettes
+**** List vignettes
 
 To list all the vignettes for a package called <package>, run:
 
@@ -188,7 +200,7 @@ To list all the vignettes from all *installed* packages:
 vignette()
 #+END_SRC
 
-****** Open a vignette
+**** Open a vignette
 
 Once you have found the name of a vignette pertaining to the topic you are interested in, you can open it with:
 
@@ -198,7 +210,7 @@ vignette("<vignette>")
 
 For instance src_R[:eval no]{vignette("two-table")}.
 
-***** Versions information
+*** Versions information
 
 R and all loaded packages:
 
@@ -212,18 +224,19 @@ One package only
 packageVersion("<package>")
 #+END_src
 
-**** Online
+** Online
 
-***** Online books
+*** Online books
 
 Several excellent books on R are-on top of their paper version-available as [[https://bookdown.org/][bookdowns]]. There are also great manuals and tutorials.
 
-****** Getting started with R and the tidyverse
+**** Getting started with R and the tidyverse
 
 The book [[http://r4ds.had.co.nz/index.html][R for Data Science by Garrett Grolemund and Hadley Wickham]] is a must read for all beginner/intermediate R users, as well as advanced users not familiar with the tidyverse. This book will get you started with good habits and is an excellent introduction to R.
 
 Go to this book right now (you can find it by googling "r for data science") and bookmark the following chapters:
 
+#+BEGIN_box
 - 3 Data visualisation
 - 5 Data transformation
 - 10 Tibbles
@@ -231,8 +244,9 @@ Go to this book right now (you can find it by googling "r for data science") and
 - 12.3.1 Gathering
 - 18 Pipes
 - 20 Vectors
+#+END_box
 
-****** Writing readable and well-formatted code
+**** Writing readable and well-formatted code
 
 While syntax matters greatly in code execution (e.g. missing quotes, commas, or parenthesis will affect the meaning of your code), R will equally run formatted and non-formatted code.
 
@@ -240,61 +254,63 @@ Code, however, should not simply be written for the machine and should be made a
 
 Of note, when you work on someone else's code, you should adopt their style, again, for the sake of consistency.
 
-****** Understanding R as a programming language
+**** Understanding R as a programming language
 
 The book [[https://adv-r.hadley.nz/][Advanced R by Hadley Wickham]] will give you a better understanding of R as a programming language and help you get to the next level of R writing.
 
 [[http://adv-r.had.co.nz/][The first edition]] of that book, which focuses on base R rather than on the tidyverse, is also well worth a read.
 
-****** Writing your own packages
+**** Writing your own packages
 
 The book [[http://r-pkgs.had.co.nz/][R packages by Hadley Wickham]] will get you started if you want to write your own packages.
 
 The on-line manual [[https://cran.r-project.org/doc/manuals/R-exts.html][Writing R Extensions by the R Core Team]] gives a more dense and exhaustive documentation if you need something that is not in Hadley's book.
 
-****** GIS in R
+**** GIS in R
 
 The tutorials [[https://data.cdrc.ac.uk/tutorial/an-introduction-to-spatial-data-analysis-and-visualisation-in-r][An Introduction to Spatial Data Analysis and Visualisation in R by Guy Lansley and James Cheshire]] as well as the book [[https://geocompr.robinlovelace.net/][Geocomputation with R by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow]] will teach you how to map data and conduct spacial data analysis in R or how to bridge R and [[https://www.qgis.org/en/site/][QGIS]].
 
-***** Cheatsheets
+*** Cheatsheets
 
 Who doesn't love cheatsheets? Good news: RStudio and others created [[https://www.rstudio.com/resources/cheatsheets/][great cheatsheets]] on the tidyverse and a few other packages. If you use the tidyverse, those are absolute must have.
 
 Go to that page right now (you can find it by googling "rstudio cheatsheet") and download:
 
+#+BEGIN_box
 - Work with Strings Cheat Sheet
 - Data Import Cheat Sheet
 - Data Transformation Cheat Sheet
 - RStudio IDE Cheat Sheet
 - Data Visualization Cheat Sheet
+#+END_box
 
-***** Other online resources
+/Note: some of these cheatsheet are accessible from within RStudio, under the help menu./
 
-https://resources.rstudio.com/
+*** Other online resources
 
-https://resources.rstudio.com/webinars
-
-check linda. mention datacamp.
+# check linda. mention datacamp.
 
 - following the hashtag [[https://twitter.com/search?q=%23rstats&src=typd][#rstats on twitter]]
 - the [[https://www.r-bloggers.com/][R-bloggers site]]
 - the [[https://journal.r-project.org/][official R Journal]]
 - the [[https://ropensci.org/blog/][rOpenSci blog]]
 - the [[https://blog.rstudio.com/][RStudio blog]]
+- [[https://resources.rstudio.com/][RStudio resources]]
+- [[https://resources.rstudio.com/webinars][RStudio webinars]]
 
-**** At SFU
+** At SFU
 
-***** The Research Commons
+*** The Research Commons
 
 The SFU Research Commons offers [[https://www.lib.sfu.ca/about/branches-depts/rc/services/consultations#r-help-and-consultations][consultations]], [[https://www.lib.sfu.ca/about/branches-depts/rc/services/workshops#r-software][workshops]], and online resources for R.
 
 The Research Commons is also a partner of [[https://software-carpentry.org/][Software Carpentry]] and [[http://www.datacarpentry.org/][Data Carpentry]], now merged under [[http://carpentries.org/][the Carpentries]]. The Carpentries organize workshops-including workshops on R-regularly. You can find their upcoming workshops on their [[https://carpentries.org/][website]].
 
-***** Library
+*** Library
 
 The SFU library owns several classic books on R. Don't hesitate to talk to a librarian if you need help finding them. And remember that you can also suggest new book acquisitions if important books are missing from the collection.
 
-***** The Scientific Programming Study Group
+*** The Scientific Programming Study Group
 
 [[http://sciprog.ca/][SciProg]], short for Scientific Programming Study Group, is an SFU student lead group open to anyone interested in learning or sharing programming resources through workshops, hackathons, and other events. R workshops are regularly offered. If you are interested in learning about a particular topic (or if you are interested in giving workshops), get in touch!
 
@@ -327,27 +343,27 @@ If you decide to go for the last option, *make a reproducible example first* or 
 
 * Getting help
 
-**** Where to ask for help
+*** Where to ask for help
 
-***** At SFU
+**** At SFU
 
 The SFU Research Commons offers one-on-one [[https://www.lib.sfu.ca/about/branches-depts/rc/services/consultations#r-help-and-consultations][consultations]] to help you with your R code.
 
-***** Online
+**** Online
 
 R has a wonderful community. But different sites have different cultures and you should familiarise yourself with a forum before posting to it.
 
-- so
-- rsc
-- twitter
-- slack r4ds
-- mailing lists
+# - so
+# - rsc
+# - twitter
+# - slack r4ds
+# - mailing lists
 
-- following the hashtag [[https://twitter.com/search?q=%23rstats&src=typd][#rstats on twitter]]
+# - following the hashtag [[https://twitter.com/search?q=%23rstats&src=typd][#rstats on twitter]]
 
-**** How to ask for help
+*** How to ask for help
 
-***** The golden rules
+**** The golden rules
 
 The R community is full of people keen to help you: you will be amazed. But if you want to receive good help, you need to do your part. In order for others to understand your issue and be able to help you, the code that you post online needs to follow 4 (even better 5) rules, which are that it:
 
@@ -361,27 +377,27 @@ The R community is full of people keen to help you: you will be amazed. But if y
 
 Let's go over each point. The posted code:
 
-****** 1. makes sense without being run
+***** 1. makes sense without being run
 
 This means that it includes the code and its output: not everybody wants to run your code and they may be able to see what is going on just by looking at this.
 
-****** 2. can be run
+***** 2. can be run
 
 Anyone copying your code and running it on their machine should get output you got. This is necessary for others to test potential solutions without having to do the work of first making up data that looks like yours.
 
-****** 3. does not contain sensitive or personal data
+***** 3. does not contain sensitive or personal data
 
 If your data is sensitive, it needs to be [[id:h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7][anonymised]] or you need to make up fake data of a similar structure.
 
-****** 4. does not use data which needs to be downloaded
+***** 4. does not use data which needs to be downloaded
 
 If your code uses, for instance, data from a .csv file, the code alone will not run. Uploading your .csv file for others to download is tedious and many people will not be keen to download it. The [[id:h:b409126d-9278-4647-aff2-1f18fe600857][data should be recreated from the code you post]].
 
-****** 5. (optionally) does not contain more than is necessary to reproduce the problem
+***** 5. (optionally) does not contain more than is necessary to reproduce the problem
 
 While not absolutely necessary, reducing your code to the simplest and smallest sample necessary to reproduce your problem will make it easier for others to pinpoint what is going on. Additionally, it is likely that you will find the problem yourself in the process of producing this "minimal reproducible example".
 
-***** How do I follow the golden rules?
+**** How do I follow the golden rules?
 
 Here are some extremely helpful links, but we will go over an example together.
 
@@ -399,26 +415,25 @@ https://masalmon.eu/2018/07/22/wheretogethelp/
 
 http://www.cookbook-r.com/
 
-****** Creating a (minimal) reproducible example
+***** Creating a (minimal) reproducible example
 
 The accepted answer to the very popular question [[https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example][how to make a great R reproducible example?]] on the site [[https://stackoverflow.com][Stack Overflow]] gives all the characteristics of a minimal reproducible example.
 
-****** Data anonymisation
+***** Data anonymisation
 :PROPERTIES:
 :ID:       h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7
 :END:
 
 The package [[https://cran.r-project.org/web/packages/anonymizer/index.html][anonymizer]] allows to anonymise sensitive information.
 
-****** Recreating data
+***** Recreating data
 :PROPERTIES:
 :ID:       h:b409126d-9278-4647-aff2-1f18fe600857
 :END:
 
 Hadley Wickham explains [[http://adv-r.had.co.nz/Reproducibility.html][how to write a reproducible example]] using src_R[:eval no]{dput()} in [[http://adv-r.had.co.nz/][his first version of Advanced R]].
 
-
-how to format posts in RStudio comm and SO
-spaces
-special characters
+# how to format posts in RStudio comm and SO
+# spaces
+# special characters
 
