@@ -1,3 +1,15 @@
+#    -*- mode: org -*-
+
+#+OPTIONS: title:t date:t author:t email:t
+#+OPTIONS: toc:t h:6 num:nil |:t todo:nil
+#+OPTIONS: *:t -:t ::t <:t \n:t e:t creator:nil
+#+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
+#+OPTIONS: html-preamble:t html-postamble:t
+
+#+DATE:	  {{{time(%B %d\, %Y)}}}
+#+AUTHOR:  Marie-Hélène Burle
+#+EMAIL:   msb2@sfu.ca
+
 * Surviving R
 
 ** Avoiding common traps, Finding information, Trouble-shooting, Getting help
@@ -26,8 +38,8 @@ Participants need to bring a laptop with: the latest R release[fn:1] and the lat
 *** If you cannot attend the workshop
 
 1. You will find a lot of useful links and some of the information covered on [[https://prosoitos.github.io/surviving-r_workshop/surviving_r.html][the workshop webpage]]
-2. You can run the script on your own (I encourage you to do the exercises before looking at the answers). For this, download `count_data.csv` and `surviving_r.R`
+2. You can run the script on your own (I encourage you to do the exercises before looking at the answers). For this, download "count_data.csv" and "surviving_r.R"
 
 [fn:1] Download R from https://cran.r-project.org/ and install it on your machine
 
-[fn:2] Install the tidyverse package by running `install.packages("tidyverse")` in R
+[fn:2] Install the tidyverse package by running install.packages("tidyverse") in R
