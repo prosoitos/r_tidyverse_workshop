@@ -38,8 +38,7 @@ Participants need to bring a laptop with: the latest R release[fn:1] and the lat
 *** If you cannot attend the workshop
 
 1. You will find a lot of useful links and some of the information covered on [[https://prosoitos.github.io/surviving-r_workshop/surviving_r.html][the workshop webpage]]
-2. You can run the script on your own (I encourage you to do the exercises before looking at the answers)
-For this, you will need to download count_data.csv and surviving_r.R
+2. You can run the script on your own (I encourage you to do the exercises before looking at the answers). For this, download `count_data.csv` and `surviving_r.R`
 
 [fn:1] Download R from https://cran.r-project.org/ and install it on your machine
 
