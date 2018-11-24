@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-11-23 Fri 09:06 -->
+<!-- 2018-11-24 Sat 13:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title><span style="font-size:33px">Surviving R:</span><br><span style="font-size:28px">Finding information, trouble-shooting, getting help</span></title>
@@ -675,22 +675,25 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgdabaaa6">Clarifications</a></li>
-<li><a href="#org1691e58">Common sources of problems</a></li>
-<li><a href="#org38446c9">Finding information</a></li>
-<li><a href="#org473c339">Trouble-shooting</a></li>
-<li><a href="#org1cee86b">Getting help</a></li>
+<li><a href="#org0fc5afb">Clarifications</a></li>
+<li><a href="#org45eea53">Common sources of problems</a></li>
+<li><a href="#org34ec8c8">Finding information</a></li>
+<li><a href="#orgcf5283d">In R itself</a></li>
+<li><a href="#orgcf8404d">Online</a></li>
+<li><a href="#orgaca71f2">At SFU</a></li>
+<li><a href="#orga158f96">Trouble-shooting</a></li>
+<li><a href="#org6d6b9e1">Getting help</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgdabaaa6" class="outline-2">
-<h2 id="orgdabaaa6">Clarifications</h2>
-<div class="outline-text-2" id="text-orgdabaaa6">
+<div id="outline-container-org0fc5afb" class="outline-2">
+<h2 id="org0fc5afb">Clarifications</h2>
+<div class="outline-text-2" id="text-org0fc5afb">
 </div>
-<div id="outline-container-orgeb9927f" class="outline-4">
-<h4 id="orgeb9927f">R, RStudio, and the tidyverse</h4>
-<div class="outline-text-4" id="text-orgeb9927f">
+<div id="outline-container-orga608625" class="outline-3">
+<h3 id="orga608625">R, RStudio, and the tidyverse</h3>
+<div class="outline-text-3" id="text-orga608625">
 <ul class="org-ul">
 <li>R vs RStudio<br /></li>
 
@@ -721,9 +724,9 @@ So&#x2026; you can use the tidyverse without using RStudio, you can use RStudio 
 </div>
 </div>
 
-<div id="outline-container-orga53bbf2" class="outline-5">
-<h5 id="orga53bbf2">Updating</h5>
-<div class="outline-text-5" id="text-orga53bbf2">
+<div id="outline-container-orga02ea63" class="outline-4">
+<h4 id="orga02ea63">Updating</h4>
+<div class="outline-text-4" id="text-orga02ea63">
 <p>
 Since all 3 are totally distinct, they need to be updated independently:<br />
 </p>
@@ -765,13 +768,13 @@ Run <code class="src src-R"><span class="org-ess-function-call">install.packages
 </div>
 </div>
 
-<div id="outline-container-org7e591cb" class="outline-4">
-<h4 id="org7e591cb">Working directory, working environment, history</h4>
-<div class="outline-text-4" id="text-org7e591cb">
+<div id="outline-container-org4bbf88e" class="outline-3">
+<h3 id="org4bbf88e">Working directory, working environment, history</h3>
+<div class="outline-text-3" id="text-org4bbf88e">
 </div>
-<div id="outline-container-orge283f16" class="outline-5">
-<h5 id="orge283f16">What are all these weird dot files?</h5>
-<div class="outline-text-5" id="text-orge283f16">
+<div id="outline-container-orga72cd13" class="outline-4">
+<h4 id="orga72cd13">What are all these weird dot files?</h4>
+<div class="outline-text-4" id="text-orga72cd13">
 <p>
 <code class="src src-R">.RData</code>/<code class="src src-R">.Rda</code><br />
 <code class="src src-R">.Rds</code><br />
@@ -781,9 +784,9 @@ Run <code class="src src-R"><span class="org-ess-function-call">install.packages
 </div>
 </div>
 
-<div id="outline-container-org478a41a" class="outline-5">
-<h5 id="org478a41a">What should I save?</h5>
-<div class="outline-text-5" id="text-org478a41a">
+<div id="outline-container-org96c7752" class="outline-4">
+<h4 id="org96c7752">What should I save?</h4>
+<div class="outline-text-4" id="text-org96c7752">
 <div class="vertbar">
 <p>
 Change your RStudio default options now<br />
@@ -794,9 +797,9 @@ Change your RStudio default options now<br />
 </div>
 </div>
 
-<div id="outline-container-orgd39b85f" class="outline-4">
-<h4 id="orgd39b85f">What is what in R?</h4>
-<div class="outline-text-4" id="text-orgd39b85f">
+<div id="outline-container-org064ce1b" class="outline-3">
+<h3 id="org064ce1b">What is what in R?</h3>
+<div class="outline-text-3" id="text-org064ce1b">
 <ul class="org-ul">
 <li>Data types<br /></li>
 
@@ -824,9 +827,9 @@ You really need it:<br />
 </div>
 </div>
 
-<div id="outline-container-org1691e58" class="outline-2">
-<h2 id="org1691e58">Common sources of problems</h2>
-<div class="outline-text-2" id="text-org1691e58">
+<div id="outline-container-org45eea53" class="outline-2">
+<h2 id="org45eea53">Common sources of problems</h2>
+<div class="outline-text-2" id="text-org45eea53">
 <ul class="org-ul">
 <li><p>
 Working environment and file locations<br />
@@ -872,21 +875,21 @@ Think about what they mean:<br />
 </div>
 </div>
 
-<div id="outline-container-org38446c9" class="outline-2">
-<h2 id="org38446c9">Finding information</h2>
-<div class="outline-text-2" id="text-org38446c9">
+<div id="outline-container-org34ec8c8" class="outline-2">
+<h2 id="org34ec8c8">Finding information</h2>
 </div>
-<div id="outline-container-org6e95525" class="outline-3">
-<h3 id="org6e95525">In R itself</h3>
-<div class="outline-text-3" id="text-org6e95525">
+
+<div id="outline-container-orgcf5283d" class="outline-2">
+<h2 id="orgcf5283d">In R itself</h2>
+<div class="outline-text-2" id="text-orgcf5283d">
 <p>
 R, as well as any package you have installed, comes with a lot of documentation. This can be invaluable if you do not have internet access.<br />
 </p>
 </div>
 
-<div id="outline-container-orgc24b0c3" class="outline-4">
-<h4 id="orgc24b0c3">Manuals</h4>
-<div class="outline-text-4" id="text-orgc24b0c3">
+<div id="outline-container-org260d294" class="outline-3">
+<h3 id="org260d294">Manuals</h3>
+<div class="outline-text-3" id="text-org260d294">
 <p>
 General manuals on R can be found by running:<br />
 </p>
@@ -898,9 +901,9 @@ General manuals on R can be found by running:<br />
 </div>
 </div>
 
-<div id="outline-container-orgccf50b5" class="outline-4">
-<h4 id="orgccf50b5">Packages</h4>
-<div class="outline-text-4" id="text-orgccf50b5">
+<div id="outline-container-org46c2c77" class="outline-3">
+<h3 id="org46c2c77">Packages</h3>
+<div class="outline-text-3" id="text-org46c2c77">
 <p>
 To get information on a package called &lt;package&gt;, you can run:<br />
 </p>
@@ -932,14 +935,14 @@ Note that, for this to work, the package doesn't need to be loaded. But of cours
 </p>
 
 <p>
-In the case of packages hosted on CRAN, a pdf containing the information for all the package functions can also be download from the web. Such package manuals are easy to find by googling "CRAN &lt;package&gt;".<br />
+In the case of packages hosted on CRAN, a pdf containing the information for all the package functions can also be download from the web. Such package manuals are easy to find by googling <code class="src src-R">CRAN <span class="org-ess-operator">&lt;</span>package<span class="org-ess-operator">&gt;</span></code>.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org4c0ad19" class="outline-4">
-<h4 id="org4c0ad19">Functions</h4>
-<div class="outline-text-4" id="text-org4c0ad19">
+<div id="outline-container-org79339be" class="outline-3">
+<h3 id="org79339be">Functions</h3>
+<div class="outline-text-3" id="text-org79339be">
 <p>
 Any serious package contains the documentation of every function in help files.<br />
 </p>
@@ -962,9 +965,9 @@ For this to work, the package containing this function needs to be loaded. So th
 </p>
 </div>
 
-<div id="outline-container-org5430d57" class="outline-5">
-<h5 id="org5430d57">How to make sense of the function help files?</h5>
-<div class="outline-text-5" id="text-org5430d57">
+<div id="outline-container-org6d5dcad" class="outline-4">
+<h4 id="org6d5dcad">How to make sense of the function help files?</h4>
+<div class="outline-text-4" id="text-org6d5dcad">
 <p>
 Let's walk through some help files together.<br />
 </p>
@@ -972,17 +975,17 @@ Let's walk through some help files together.<br />
 </div>
 </div>
 
-<div id="outline-container-org4665d45" class="outline-4">
-<h4 id="org4665d45">Vignettes</h4>
-<div class="outline-text-4" id="text-org4665d45">
+<div id="outline-container-org7fe816b" class="outline-3">
+<h3 id="org7fe816b">Vignettes</h3>
+<div class="outline-text-3" id="text-org7fe816b">
 <p>
 Packages also sometime contain additional information in "vignettes": tutorials on how to use the package.<br />
 </p>
 </div>
 
-<div id="outline-container-orga144081" class="outline-5">
-<h5 id="orga144081">List vignettes</h5>
-<div class="outline-text-5" id="text-orga144081">
+<div id="outline-container-orgfb6e025" class="outline-4">
+<h4 id="orgfb6e025">List vignettes</h4>
+<div class="outline-text-4" id="text-orgfb6e025">
 <p>
 To list all the vignettes for a package called &lt;package&gt;, run:<br />
 </p>
@@ -1020,9 +1023,9 @@ To list all the vignettes from all <b>installed</b> packages:<br />
 </div>
 </div>
 
-<div id="outline-container-orge52f116" class="outline-5">
-<h5 id="orge52f116">Open a vignette</h5>
-<div class="outline-text-5" id="text-orge52f116">
+<div id="outline-container-org02f23db" class="outline-4">
+<h4 id="org02f23db">Open a vignette</h4>
+<div class="outline-text-4" id="text-org02f23db">
 <p>
 Once you have found the name of a vignette pertaining to the topic you are interested in, you can open it with:<br />
 </p>
@@ -1039,9 +1042,9 @@ For instance <code class="src src-R"><span class="org-ess-function-call">vignett
 </div>
 </div>
 
-<div id="outline-container-org300e2d0" class="outline-4">
-<h4 id="org300e2d0">Versions information</h4>
-<div class="outline-text-4" id="text-org300e2d0">
+<div id="outline-container-org22caaa3" class="outline-3">
+<h3 id="org22caaa3">Versions information</h3>
+<div class="outline-text-3" id="text-org22caaa3">
 <p>
 R and all loaded packages:<br />
 </p>
@@ -1050,34 +1053,50 @@ R and all loaded packages:<br />
 <pre class="src src-R"><span class="org-ess-function-call">sessionInfo</span><span class="org-ess-paren"><span class="org-rainbow-delimiters-depth-1">()</span></span>
 </pre>
 </div>
+<p>
+or<br />
+</p>
+<div class="org-src-container">
+<pre class="src src-R">sessioninfo::<span class="org-ess-function-call">session_info</span><span class="org-ess-paren"><span class="org-rainbow-delimiters-depth-1">()</span></span>
+</pre>
+</div>
 
 <p>
-One package only<br />
+One package only:<br />
 </p>
 
 <div class="org-src-container">
 <pre class="src src-R"><span class="org-ess-function-call">packageVersion</span><span class="org-ess-paren"><span class="org-rainbow-delimiters-depth-1">(</span></span><span class="org-string">"&lt;package&gt;"</span><span class="org-ess-paren"><span class="org-rainbow-delimiters-depth-1">)</span></span>
 </pre>
 </div>
+
+<p>
+R only:<br />
+</p>
+
+<div class="org-src-container">
+<pre class="src src-R">version
+</pre>
+</div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orge34fb83" class="outline-3">
-<h3 id="orge34fb83">Online</h3>
-<div class="outline-text-3" id="text-orge34fb83">
+<div id="outline-container-orgcf8404d" class="outline-2">
+<h2 id="orgcf8404d">Online</h2>
+<div class="outline-text-2" id="text-orgcf8404d">
 </div>
-<div id="outline-container-org9f4c841" class="outline-4">
-<h4 id="org9f4c841">Online books</h4>
-<div class="outline-text-4" id="text-org9f4c841">
+<div id="outline-container-orgcf6bc37" class="outline-3">
+<h3 id="orgcf6bc37">Online books</h3>
+<div class="outline-text-3" id="text-orgcf6bc37">
 <p>
 Several excellent books on R are-on top of their paper version-available as <a href="https://bookdown.org/">bookdowns</a>. There are also great manuals and tutorials.<br />
 </p>
 </div>
 
-<div id="outline-container-org6ba12dc" class="outline-5">
-<h5 id="org6ba12dc">Getting started with R and the tidyverse</h5>
-<div class="outline-text-5" id="text-org6ba12dc">
+<div id="outline-container-org72d3905" class="outline-4">
+<h4 id="org72d3905">Getting started with R and the tidyverse</h4>
+<div class="outline-text-4" id="text-org72d3905">
 <p>
 The book <a href="http://r4ds.had.co.nz/index.html">R for Data Science by Garrett Grolemund and Hadley Wickham</a> is a must read for all beginner/intermediate R users, as well as advanced users not familiar with the tidyverse. This book will get you started with good habits and is an excellent introduction to R.<br />
 </p>
@@ -1086,7 +1105,7 @@ The book <a href="http://r4ds.had.co.nz/index.html">R for Data Science by Garret
 Go to this book right now (you can find it by googling "r for data science") and bookmark the following chapters:<br />
 </p>
 
-<div class="box">
+<div class="definition">
 <ul class="org-ul">
 <li>3 Data visualisation<br /></li>
 <li>5 Data transformation<br /></li>
@@ -1101,9 +1120,9 @@ Go to this book right now (you can find it by googling "r for data science") and
 </div>
 </div>
 
-<div id="outline-container-orgb19b55c" class="outline-5">
-<h5 id="orgb19b55c">Writing readable and well-formatted code</h5>
-<div class="outline-text-5" id="text-orgb19b55c">
+<div id="outline-container-org460eacc" class="outline-4">
+<h4 id="org460eacc">Writing readable and well-formatted code</h4>
+<div class="outline-text-4" id="text-org460eacc">
 <p>
 While syntax matters greatly in code execution (e.g. missing quotes, commas, or parenthesis will affect the meaning of your code), R will equally run formatted and non-formatted code.<br />
 </p>
@@ -1118,11 +1137,11 @@ Of note, when you work on someone else's code, you should adopt their style, aga
 </div>
 </div>
 
-<div id="outline-container-org0727f96" class="outline-5">
-<h5 id="org0727f96">Understanding R as a programming language</h5>
-<div class="outline-text-5" id="text-org0727f96">
+<div id="outline-container-org7b19210" class="outline-4">
+<h4 id="org7b19210">Understanding R as a programming language</h4>
+<div class="outline-text-4" id="text-org7b19210">
 <p>
-The book <a href="https://adv-r.hadley.nz/">Advanced R by Hadley Wickham</a> will give you a better understanding of R as a programming language and help you get to the next level of R writing.<br />
+The book <a href="https://adv-r.hadley.nz/">Advanced R by Hadley Wickham</a> will give you a better understanding of R as a programming language and help you get to the next level of R writing. Don't get turned off by the term "advanced". The book is very readable and is useful for R users at all levels to better understand the various types of data, the functioning of R, etc.<br />
 </p>
 
 <p>
@@ -1131,9 +1150,9 @@ The book <a href="https://adv-r.hadley.nz/">Advanced R by Hadley Wickham</a> wil
 </div>
 </div>
 
-<div id="outline-container-org51026a6" class="outline-5">
-<h5 id="org51026a6">Writing your own packages</h5>
-<div class="outline-text-5" id="text-org51026a6">
+<div id="outline-container-orga9afd2f" class="outline-4">
+<h4 id="orga9afd2f">Writing your own packages</h4>
+<div class="outline-text-4" id="text-orga9afd2f">
 <p>
 The book <a href="http://r-pkgs.had.co.nz/">R packages by Hadley Wickham</a> will get you started if you want to write your own packages.<br />
 </p>
@@ -1144,9 +1163,9 @@ The on-line manual <a href="https://cran.r-project.org/doc/manuals/R-exts.html">
 </div>
 </div>
 
-<div id="outline-container-org1f1e764" class="outline-5">
-<h5 id="org1f1e764">GIS in R</h5>
-<div class="outline-text-5" id="text-org1f1e764">
+<div id="outline-container-org80be8eb" class="outline-4">
+<h4 id="org80be8eb">GIS in R</h4>
+<div class="outline-text-4" id="text-org80be8eb">
 <p>
 The tutorials <a href="https://data.cdrc.ac.uk/tutorial/an-introduction-to-spatial-data-analysis-and-visualisation-in-r">An Introduction to Spatial Data Analysis and Visualisation in R by Guy Lansley and James Cheshire</a> as well as the book <a href="https://geocompr.robinlovelace.net/">Geocomputation with R by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow</a> will teach you how to map data and conduct spacial data analysis in R or how to bridge R and <a href="https://www.qgis.org/en/site/">QGIS</a>.<br />
 </p>
@@ -1154,9 +1173,9 @@ The tutorials <a href="https://data.cdrc.ac.uk/tutorial/an-introduction-to-spati
 </div>
 </div>
 
-<div id="outline-container-org3fe0399" class="outline-4">
-<h4 id="org3fe0399">Cheatsheets</h4>
-<div class="outline-text-4" id="text-org3fe0399">
+<div id="outline-container-org2cbc778" class="outline-3">
+<h3 id="org2cbc778">Cheatsheets</h3>
+<div class="outline-text-3" id="text-org2cbc778">
 <p>
 Who doesn't love cheatsheets? Good news: RStudio and others created <a href="https://www.rstudio.com/resources/cheatsheets/">great cheatsheets</a> on the tidyverse and a few other packages. If you use the tidyverse, those are absolute must have.<br />
 </p>
@@ -1165,7 +1184,7 @@ Who doesn't love cheatsheets? Good news: RStudio and others created <a href="htt
 Go to that page right now (you can find it by googling "rstudio cheatsheet") and download:<br />
 </p>
 
-<div class="box">
+<div class="definition">
 <ul class="org-ul">
 <li>Work with Strings Cheat Sheet<br /></li>
 <li>Data Import Cheat Sheet<br /></li>
@@ -1182,15 +1201,15 @@ Go to that page right now (you can find it by googling "rstudio cheatsheet") and
 </div>
 </div>
 
-<div id="outline-container-org21ae9a2" class="outline-4">
-<h4 id="org21ae9a2">Other online resources</h4>
-<div class="outline-text-4" id="text-org21ae9a2">
+<div id="outline-container-org39b94b6" class="outline-3">
+<h3 id="org39b94b6">Other online resources</h3>
+<div class="outline-text-3" id="text-org39b94b6">
 <ul class="org-ul">
-<li>following the hashtag <a href="https://twitter.com/search?q=#rstats&amp;src=typd">#rstats on twitter</a><br /></li>
-<li>the <a href="https://www.r-bloggers.com/">R-bloggers site</a><br /></li>
-<li>the <a href="https://journal.r-project.org/">official R Journal</a><br /></li>
-<li>the <a href="https://ropensci.org/blog/">rOpenSci blog</a><br /></li>
-<li>the <a href="https://blog.rstudio.com/">RStudio blog</a><br /></li>
+<li>Following the hashtag <a href="https://twitter.com/search?q=#rstats&amp;src=typd">#rstats on twitter</a><br /></li>
+<li>The <a href="https://www.r-bloggers.com/">R-bloggers site</a><br /></li>
+<li>The <a href="https://journal.r-project.org/">official R Journal</a><br /></li>
+<li>The <a href="https://ropensci.org/blog/">rOpenSci blog</a><br /></li>
+<li>The <a href="https://blog.rstudio.com/">RStudio blog</a><br /></li>
 <li><a href="https://resources.rstudio.com/">RStudio resources</a><br /></li>
 <li><a href="https://resources.rstudio.com/webinars">RStudio webinars</a><br /></li>
 </ul>
@@ -1198,13 +1217,13 @@ Go to that page right now (you can find it by googling "rstudio cheatsheet") and
 </div>
 </div>
 
-<div id="outline-container-orge006ec3" class="outline-3">
-<h3 id="orge006ec3">At SFU</h3>
-<div class="outline-text-3" id="text-orge006ec3">
+<div id="outline-container-orgaca71f2" class="outline-2">
+<h2 id="orgaca71f2">At SFU</h2>
+<div class="outline-text-2" id="text-orgaca71f2">
 </div>
-<div id="outline-container-org4c090f7" class="outline-4">
-<h4 id="org4c090f7">The Research Commons</h4>
-<div class="outline-text-4" id="text-org4c090f7">
+<div id="outline-container-org0346fa9" class="outline-3">
+<h3 id="org0346fa9">The Research Commons</h3>
+<div class="outline-text-3" id="text-org0346fa9">
 <p>
 The SFU Research Commons offers <a href="https://www.lib.sfu.ca/about/branches-depts/rc/services/consultations#r-help-and-consultations">consultations</a>, <a href="https://www.lib.sfu.ca/about/branches-depts/rc/services/workshops#r-software">workshops</a>, and online resources for R.<br />
 </p>
@@ -1215,36 +1234,31 @@ The Research Commons is also a partner of <a href="https://software-carpentry.or
 </div>
 </div>
 
-<div id="outline-container-org3e48226" class="outline-4">
-<h4 id="org3e48226">Library</h4>
-<div class="outline-text-4" id="text-org3e48226">
+<div id="outline-container-orga081516" class="outline-3">
+<h3 id="orga081516">Library</h3>
+<div class="outline-text-3" id="text-orga081516">
 <p>
 The SFU library owns several classic books on R. Don't hesitate to talk to a librarian if you need help finding them. And remember that you can also suggest new book acquisitions if important books are missing from the collection.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf0bf7ae" class="outline-4">
-<h4 id="orgf0bf7ae">The Scientific Programming Study Group</h4>
-<div class="outline-text-4" id="text-orgf0bf7ae">
+<div id="outline-container-org4fe022b" class="outline-3">
+<h3 id="org4fe022b">The Scientific Programming Study Group</h3>
+<div class="outline-text-3" id="text-org4fe022b">
 <p>
 <a href="http://sciprog.ca/">SciProg</a>, short for Scientific Programming Study Group, is an SFU student lead group open to anyone interested in learning or sharing programming resources through workshops, hackathons, and other events. R workshops are regularly offered. If you are interested in learning about a particular topic (or if you are interested in giving workshops), get in touch!<br />
 </p>
 </div>
 </div>
 </div>
-</div>
 
-<div id="outline-container-org473c339" class="outline-2">
-<h2 id="org473c339">Trouble-shooting</h2>
-<div class="outline-text-2" id="text-org473c339">
-<p>
-Make a list<br />
-</p>
-
+<div id="outline-container-orga158f96" class="outline-2">
+<h2 id="orga158f96">Trouble-shooting</h2>
+<div class="outline-text-2" id="text-orga158f96">
 <div class="red">
 <ol class="org-ol">
-<li><b>Read the error message</b><br /></li>
+<li><b>Read the error message*</b><br /></li>
 <li>Look for typos (R is case sensitive)<br /></li>
 <li>Re-start your R process<br /></li>
 <li>Make sure your working directory is where you think it is and your files are where you think they are<br /></li>
@@ -1258,59 +1272,76 @@ Make a list<br />
 </div>
 
 <p>
-If, after doing all of these, you are stick stuck, then ask for help. Here are a number of options:<br />
+<i>*Don't panic as soon as you see something red: some information (for instance when you install new packages) and warnings are also red. They are important to read, but they are not error messages. Most students panic as soon as they see error messages and they do not read those. Error messages are not there to punish you: they are very useful bits of information that are critical to finding a solution. While they may not always make sense, read them several times. You might understand part of it and it can give you hints on how to get started. Error messages are also very useful to look for help on google.</i><br />
 </p>
-
-<div class="red">
-<ul class="org-ul">
-<li>ask your supervisor<br /></li>
-<li>ask your peers<br /></li>
-<li>book a consultation with an R peer at the Research Commons<br /></li>
-<li>post a question in Stack Overflow or the RStudio Community website<br /></li>
-</ul>
-
-</div>
 
 <p>
-If you decide to go for the last option, <b>make a reproducible example first</b> or you will get your head chopped off.<br />
+If, after doing all of these, you are stick stuck, then ask for help:<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org1cee86b" class="outline-2">
-<h2 id="org1cee86b">Getting help</h2>
-<div class="outline-text-2" id="text-org1cee86b">
+<div id="outline-container-org6d6b9e1" class="outline-2">
+<h2 id="org6d6b9e1">Getting help</h2>
+<div class="outline-text-2" id="text-org6d6b9e1">
 </div>
-<div id="outline-container-org99abb26" class="outline-4">
-<h4 id="org99abb26">Where to ask for help</h4>
-<div class="outline-text-4" id="text-org99abb26">
+<div id="outline-container-org33b285a" class="outline-3">
+<h3 id="org33b285a">Where to ask for help</h3>
+<div class="outline-text-3" id="text-org33b285a">
 </div>
-<div id="outline-container-org026101a" class="outline-5">
-<h5 id="org026101a">At SFU</h5>
-<div class="outline-text-5" id="text-org026101a">
+<div id="outline-container-orgd6ca9b9" class="outline-4">
+<h4 id="orgd6ca9b9">At SFU</h4>
+<div class="outline-text-4" id="text-orgd6ca9b9">
+<p>
+Maybe you can ask for help to your supervisor, or your peers.<br />
+</p>
+
 <p>
 The SFU Research Commons offers one-on-one <a href="https://www.lib.sfu.ca/about/branches-depts/rc/services/consultations#r-help-and-consultations">consultations</a> to help you with your R code.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org555fdb7" class="outline-5">
-<h5 id="org555fdb7">Online</h5>
-<div class="outline-text-5" id="text-org555fdb7">
+<div id="outline-container-org0ed43d7" class="outline-4">
+<h4 id="org0ed43d7">Online</h4>
+<div class="outline-text-4" id="text-org0ed43d7">
 <p>
-R has a wonderful community. But different sites have different cultures and you should familiarise yourself with a forum before posting to it.<br />
+R has a wonderful community and you can also ask for help online.<br />
 </p>
+
+<p>
+But different sites and forums have different cultures and you should familiarise yourself with a site before making your first post. You also have to <b>make a reproducible example first</b> or you may get your head chopped off.<br />
+</p>
+</div>
+
+<div id="outline-container-org380b982" class="outline-5">
+<h5 id="org380b982">Options</h5>
+<div class="outline-text-5" id="text-org380b982">
+<ul class="org-ul">
+<li><a href="https://stackoverflow.com/questions/tagged/r">Stack Overflow, with the tag r</a><br /></li>
+<li><a href="https://community.rstudio.com/">The RStudio Community forum</a><br /></li>
+<li><a href="https://twitter.com/search?q=#rstats&amp;src=savs">Twitter with the hashtag #rstats</a><br /></li>
+<li>There is a Slack team of people reading <a href="http://r4ds.had.co.nz/index.html">R for Data Science</a><br /></li>
+<li>There are also a number of mailing lists<br /></li>
+</ul>
+</div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org99452eb" class="outline-4">
-<h4 id="org99452eb">How to ask for help</h4>
-<div class="outline-text-4" id="text-org99452eb">
+<div id="outline-container-org92c88d6" class="outline-3">
+<h3 id="org92c88d6">How to ask for help</h3>
+<div class="outline-text-3" id="text-org92c88d6">
+<blockquote>
+<p>
+This is critical&#x2026;<br />
+</p>
+</blockquote>
 </div>
-<div id="outline-container-org771c15b" class="outline-5">
-<h5 id="org771c15b">The golden rules</h5>
-<div class="outline-text-5" id="text-org771c15b">
+
+<div id="outline-container-org60c22d5" class="outline-4">
+<h4 id="org60c22d5">The golden rules</h4>
+<div class="outline-text-4" id="text-org60c22d5">
 <p>
 The R community is full of people keen to help you: you will be amazed. But if you want to receive good help, you need to do your part. In order for others to understand your issue and be able to help you, the code that you post online needs to follow 4 (even better 5) rules, which are that it:<br />
 </p>
@@ -1331,45 +1362,45 @@ Let's go over each point. The posted code:<br />
 </p>
 </div>
 
-<div id="outline-container-org29d649b" class="outline-6">
-<h6 id="org29d649b">1. makes sense without being run</h6>
-<div class="outline-text-6" id="text-org29d649b">
+<div id="outline-container-org229626b" class="outline-5">
+<h5 id="org229626b">1. Makes sense without being run</h5>
+<div class="outline-text-5" id="text-org229626b">
 <p>
 This means that it includes the code and its output: not everybody wants to run your code and they may be able to see what is going on just by looking at this.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org58c4bbe" class="outline-6">
-<h6 id="org58c4bbe">2. can be run</h6>
-<div class="outline-text-6" id="text-org58c4bbe">
+<div id="outline-container-org92e3a53" class="outline-5">
+<h5 id="org92e3a53">2. Can be run</h5>
+<div class="outline-text-5" id="text-org92e3a53">
 <p>
 Anyone copying your code and running it on their machine should get output you got. This is necessary for others to test potential solutions without having to do the work of first making up data that looks like yours.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org78242c6" class="outline-6">
-<h6 id="org78242c6">3. does not contain sensitive or personal data</h6>
-<div class="outline-text-6" id="text-org78242c6">
+<div id="outline-container-org3ca9138" class="outline-5">
+<h5 id="org3ca9138">3. Does not contain sensitive or personal data</h5>
+<div class="outline-text-5" id="text-org3ca9138">
 <p>
-If your data is sensitive, it needs to be <a href="#orgcb12045">anonymised</a> or you need to make up fake data of a similar structure.<br />
+If your data is sensitive, it needs to be <a href="#orgaedba6b">anonymised</a> or you need to make up fake data of a similar structure.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org69819ca" class="outline-6">
-<h6 id="org69819ca">4. does not use data which needs to be downloaded</h6>
-<div class="outline-text-6" id="text-org69819ca">
+<div id="outline-container-org6f202b6" class="outline-5">
+<h5 id="org6f202b6">4. Does not use data which needs to be downloaded</h5>
+<div class="outline-text-5" id="text-org6f202b6">
 <p>
-If your code uses, for instance, data from a .csv file, the code alone will not run. Uploading your .csv file for others to download is tedious and many people will not be keen to download it. The <a href="#org77f1155">data should be recreated from the code you post</a>.<br />
+If your code uses, for instance, data from a <code class="src src-R">.csv</code> file, the code alone will not run. Uploading your <code class="src src-R">.csv</code> file for others to download is tedious and many people will not be keen to download it. The <a href="#org8f3bb1c">data should be recreated from the code you post</a>.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3b9e504" class="outline-6">
-<h6 id="org3b9e504">5. (optionally) does not contain more than is necessary to reproduce the problem</h6>
-<div class="outline-text-6" id="text-org3b9e504">
+<div id="outline-container-orgd4a4dad" class="outline-5">
+<h5 id="orgd4a4dad">5. (Optionally) does not contain more than is necessary to reproduce the problem</h5>
+<div class="outline-text-5" id="text-orgd4a4dad">
 <p>
 While not absolutely necessary, reducing your code to the simplest and smallest sample necessary to reproduce your problem will make it easier for others to pinpoint what is going on. Additionally, it is likely that you will find the problem yourself in the process of producing this "minimal reproducible example".<br />
 </p>
@@ -1377,63 +1408,45 @@ While not absolutely necessary, reducing your code to the simplest and smallest 
 </div>
 </div>
 
-<div id="outline-container-org304f4d9" class="outline-5">
-<h5 id="org304f4d9">How do I follow the golden rules?</h5>
-<div class="outline-text-5" id="text-org304f4d9">
+<div id="outline-container-org3951041" class="outline-4">
+<h4 id="org3951041">How do I follow the golden rules?</h4>
+<div class="outline-text-4" id="text-org3951041">
 <p>
 Here are some extremely helpful links, but we will go over an example together.<br />
 </p>
 
 <p>
 <a href="https://support.rstudio.com/hc/en-us/articles/200552336">https://support.rstudio.com/hc/en-us/articles/200552336</a><br />
-</p>
-
-<p>
 <a href="https://www.dummies.com/programming/r/r-for-dummies-cheat-sheet/">https://www.dummies.com/programming/r/r-for-dummies-cheat-sheet/</a><br />
-</p>
-
-<p>
 <a href="https://www.r-bloggers.com/three-tips-for-posting-good-questions-to-r-help-and-stack-overflow/">https://www.r-bloggers.com/three-tips-for-posting-good-questions-to-r-help-and-stack-overflow/</a><br />
-</p>
-
-<p>
 <a href="https://resources.rstudio.com/webinars/help-me-help-you-creating-reproducible-examples-jenny-bryan">https://resources.rstudio.com/webinars/help-me-help-you-creating-reproducible-examples-jenny-bryan</a><br />
-</p>
-
-<p>
 <a href="https://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/">https://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/</a><br />
-</p>
-
-<p>
 <a href="https://masalmon.eu/2018/07/22/wheretogethelp/">https://masalmon.eu/2018/07/22/wheretogethelp/</a><br />
-</p>
-
-<p>
 <a href="http://www.cookbook-r.com/">http://www.cookbook-r.com/</a><br />
 </p>
 </div>
 
-<div id="outline-container-org713dc58" class="outline-6">
-<h6 id="org713dc58">Creating a (minimal) reproducible example</h6>
-<div class="outline-text-6" id="text-org713dc58">
+<div id="outline-container-org544e6a7" class="outline-5">
+<h5 id="org544e6a7">Creating a (minimal) reproducible example</h5>
+<div class="outline-text-5" id="text-org544e6a7">
 <p>
 The accepted answer to the very popular question <a href="https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example">how to make a great R reproducible example?</a> on the site <a href="https://stackoverflow.com">Stack Overflow</a> gives all the characteristics of a minimal reproducible example.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgcb12045" class="outline-6">
-<h6 id="orgcb12045"><a id="h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7"></a>Data anonymisation</h6>
-<div class="outline-text-6" id="text-orgcb12045">
+<div id="outline-container-orgaedba6b" class="outline-5">
+<h5 id="orgaedba6b"><a id="h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7"></a>Data anonymisation</h5>
+<div class="outline-text-5" id="text-orgaedba6b">
 <p>
 The package <a href="https://cran.r-project.org/web/packages/anonymizer/index.html">anonymizer</a> allows to anonymise sensitive information.<br />
 </p>
 </div>
 </div>
 
-<div id="outline-container-org77f1155" class="outline-6">
-<h6 id="org77f1155"><a id="h:b409126d-9278-4647-aff2-1f18fe600857"></a>Recreating data</h6>
-<div class="outline-text-6" id="text-org77f1155">
+<div id="outline-container-org8f3bb1c" class="outline-5">
+<h5 id="org8f3bb1c"><a id="h:b409126d-9278-4647-aff2-1f18fe600857"></a>Recreating data</h5>
+<div class="outline-text-5" id="text-org8f3bb1c">
 <p>
 Hadley Wickham explains <a href="http://adv-r.had.co.nz/Reproducibility.html">how to write a reproducible example</a> using <code class="src src-R"><span class="org-ess-function-call">dput</span><span class="org-ess-paren"><span class="org-rainbow-delimiters-depth-1">()</span></span></code> in <a href="http://adv-r.had.co.nz/">his first version of Advanced R</a>.<br />
 </p>
@@ -1444,7 +1457,7 @@ Hadley Wickham explains <a href="http://adv-r.had.co.nz/Reproducibility.html">ho
 </div>
 </div>
 <div id="postamble" class="status">
-<span style="color:#596a73;font-size:14px"><div align="right">Last updated: November 23, 2018</div></span>
+<span style="color:#596a73;font-size:14px"><div align="right">Last updated: November 24, 2018</div></span>
 </div>
 </body>
 </html>
