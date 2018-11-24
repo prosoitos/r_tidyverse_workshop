@@ -22,18 +22,18 @@
 
 - R vs RStudio
 
-- Base R vs tidyverse (we will see the difference between tibbles vs data frames in a concrete example).
+- Base R vs tidyverse (we will see the differences between tibbles vs data frames in a concrete example)
 
 - Core tidyverse vs other tidyverse packages
 
 #+BEGIN_red
-R, RStudio, and the tidyverse all 3 very different things!
+R, RStudio, and the tidyverse are 3 totally different things!
 
-Because many RStudio users never open R directly, they do not realize that R is doing the work. R needs to be updated regularly and you certainly cannot uninstall it.
+Because many RStudio users never open R directly, they do not realize that R is doing the work. R (and I mean R, not RStudio) needs to be updated regularly and you certainly cannot uninstall it.
 
-- R is a software and computer language. Without it, nothing works
+- R is a software environment and programming language. Without it, nothing works
 - RStudio is an IDE (integrated development environment) allowing a nicer experience while working in R
-- the tidyverse is a set of R packages
+- the tidyverse is an R meta-package (a set of R packages)
 
 So... you can use the tidyverse without using RStudio, you can use RStudio without using any of the tidyverse packages, but you cannot use RStudio without using R. As soon as you use RStudio, you *are* using R.
 #+END_red
