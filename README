@@ -35,7 +35,7 @@ This workshop is open to current SFU students, staff, and faculty of all levels 
 
 Participants need to bring a laptop with: the latest R release[fn:1] and the latest CRAN version of the package "tidyverse"[fn:2].
 
-The workshop webpage can be accessed [[https://github.com/prosoitos/surviving-r_workshop/surviving_r.html][here]].
+The workshop webpage can be accessed [[https://prosoitos.github.io/surviving-r_workshop/surviving_r.html][here]].
 
 [fn:1] Download R from https://cran.r-project.org/ and install it on your machine
 
