@@ -242,9 +242,9 @@ tbl_long %>%
 ## Uh oh... we also need to load the data...
 ## without the data, the code cannot be run.
 
-## *** How to provide data for a reprex
+## ** How to provide data for a reprex
 
-## **** Using dput()
+## *** Using dput()
 
 ## Do not upload a .csv file nor a .rds object somewhere on the web to be downloaded. People hate downloading stuff and it is likely that you will not get help or be asked to produce a reprex instead...
 ## On Stack Overflow, this might even cost you some downvotes
