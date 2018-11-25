@@ -394,19 +394,19 @@ This means that it includes the code and its output: not everybody wants to run 
 
 **** 2. Can be run
 
-Anyone copying your code and running it on their machine should get output you got. This is necessary for others to test potential solutions without having to do the work of first making up data that looks like yours.
+Anyone copying your code and running it on their machine should get the output you got. This is necessary for others to test potential solutions without having to do the work of first making up data that looks like yours.
 
 **** 3. Does not contain sensitive or personal data
 
-If your data is sensitive, it needs to be [[id:h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7][anonymised]] or you need to make up fake data of a similar structure.
+If your data is sensitive, it needs to be [[id:h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7][anonymised]] or you need to make up a toy example which mimics the structure of your data.
 
 **** 4. Does not use data which needs to be downloaded
 
-If your code uses, for instance, data from a src_R[:eval no]{.csv} file, the code alone will not run. Uploading your src_R[:eval no]{.csv} file for others to download is tedious and many people will not be keen to download it. The [[id:h:b409126d-9278-4647-aff2-1f18fe600857][data should be recreated from the code you post]].
+If your code uses, for instance, data from a src_R[:eval no]{.csv} file, the code alone will not run. Uploading your src_R[:eval no]{.csv} file or a src_R[:eval no]{.rds} file for others to download is tedious and many people will not be keen to do so. At best, your question will be ignored, at worse, you will get negative feed-back. You either need to make a toy example which has all the characteristics necessary to replicate your problem or you need to provide a sample of your data using src_R[:eval no]{dput()}. Hadley Wickham explains [[http://adv-r.had.co.nz/Reproducibility.html][how to use dput() to create a reproducible example]] in [[http://adv-r.had.co.nz/][his first version of Advanced R]].
 
 **** 5. (Optionally) does not contain more than is necessary to reproduce the problem
 
-While not absolutely necessary, reducing your code to the simplest and smallest sample necessary to reproduce your problem will make it easier for others to pinpoint what is going on. Additionally, it is likely that you will find the problem yourself in the process of producing this "minimal reproducible example".
+While not absolutely necessary, reducing your code to the simplest and smallest sample necessary to reproduce your problem will make it easier for others to pinpoint what is going on. Additionally, it is likely that you will find the problem yourself in the process of producing this "minimal reproducible example". The accepted answer to the very popular question [[https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example][how to make a great R reproducible example?]] on the site [[https://stackoverflow.com][Stack Overflow]] gives all the characteristics of a minimal reproducible example.
 
 *** How do I follow the golden rules?
 
@@ -420,23 +420,12 @@ https://swcarpentry.github.io/r-novice-gapminder/03-seeking-help/
 https://masalmon.eu/2018/07/22/wheretogethelp/
 http://www.cookbook-r.com/
 
-**** Creating a (minimal) reproducible example
-
-The accepted answer to the very popular question [[https://stackoverflow.com/questions/5963269/how-to-make-a-great-r-reproducible-example][how to make a great R reproducible example?]] on the site [[https://stackoverflow.com][Stack Overflow]] gives all the characteristics of a minimal reproducible example.
-
-**** Data anonymisation
+*** Data anonymisation
 :PROPERTIES:
 :ID:       h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7
 :END:
 
-The package [[https://cran.r-project.org/web/packages/anonymizer/index.html][anonymizer]] allows to anonymise sensitive information.
-
-**** Recreating data
-:PROPERTIES:
-:ID:       h:b409126d-9278-4647-aff2-1f18fe600857
-:END:
-
-Hadley Wickham explains [[http://adv-r.had.co.nz/Reproducibility.html][how to write a reproducible example]] using src_R[:eval no]{dput()} in [[http://adv-r.had.co.nz/][his first version of Advanced R]].
+You can anonymise sensitive information yourself, or you can use the package [[https://cran.r-project.org/web/packages/anonymizer/index.html][anonymizer]].
 
 # how to format posts in RStudio comm and SO
 # spaces
