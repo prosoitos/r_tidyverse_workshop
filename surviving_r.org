@@ -398,7 +398,7 @@ Anyone copying your code and running it on their machine should get the output y
 
 **** 3. Does not contain sensitive or personal data
 
-If your data is sensitive, it needs to be [[id:h:5fa991db-3c7d-4e83-a5bc-de6ac1000ee7][anonymised]] or you need to make up a toy example which mimics the structure of your data.
+If your data is sensitive, it needs to be anonymised or you need to make a toy example which mimics the structure of your data.
 
 **** 4. Does not use data which needs to be downloaded
 
