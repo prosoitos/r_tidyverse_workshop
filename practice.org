@@ -1,0 +1,144 @@
+#+OPTIONS: title:t date:t author:t email:t
+#+OPTIONS: toc:t h:6 num:nil |:t todo:nil
+#+OPTIONS: *:t -:t ::t <:t \n:t e:t creator:nil
+#+OPTIONS: f:t inline:t tasks:t tex:t timestamp:t
+#+OPTIONS: html-preamble:t html-postamble:t
+
+
+
+#+TITLE:   Surviving R: practice
+#+DATE:	  {{{time(%B %d\, %Y)}}}
+#+AUTHOR:  Marie-Hélène Burle
+#+EMAIL:   msb2@sfu.ca
+
+* Packages
+
+There are the packages we will use for this workshop
+
+It is always a good practice to load all the packages at the top of a script.
+
+#+BEGIN_src R
+library(tidyverse)
+library(magrittr)
+library(here)
+library(sessioninfo)
+library(anonymizer)
+#+END_src
+
+* Getting information from within R
+
+#+BEGIN_src R
+## open R manuals
+help.start()
+
+## look for help on package "dplyr"
+package?dplyr
+
+## list all functions of the package "dplyr"
+help(package = dplyr)
+
+## look for help on the function "inner_join"
+## (note: dplyr has to be loaded)
+?inner_join
+
+## list all the vignettes of all the packages installed on your machine
+## probably not the most useful...
+vignette()
+
+## list all the vignettes of all the packages currently loaded
+vignette(all = F)
+
+## list all the vignettes for the package "dplyr"
+vignette(package = "dplyr")
+
+## open the vignette "programming"
+vignette("programming")
+
+## look for package versions, R version, locales, etc.
+sessionInfo()
+
+## same but from the package "sessioninfo"
+## more organized and tells you where you installed the packages from
+## (GitHub, CRAN, etc.) which is very useful to run updates
+session_info()
+
+## look for the version of the package "dplyr"
+packageVersion("dplyr")
+
+## look for the R version
+## note that this is not a function (so no ending parenthesis)
+## it is an object of class simple.list
+## (something you have probably never encountered, but don't worry about it.
+## Simply remember to type it without parenthesis)
+version
+#+END_src
+
+* Let's play with some data
+
+** The problem with paths
+
+#+BEGIN_src R
+## absolute path: it works, but it is not portable
+df <- read.csv("/home/marie/parvus/rc/r/surviving-r_workshop/count_data.csv")
+
+## relative path: it is portable, but it is very easy to break
+## (if you are not in the root of the project)
+df <- read.csv("count_data.csv")
+
+## the answer: here::here()
+df <- read.csv(here("count_data.csv"))
+#+END_src
+
+** Data frames vs tibbles
+
+#+BEGIN_src R
+df
+## totally impractical (way too many rows!)
+
+## you have to remember to call head() each time
+head(df)
+
+## Notice how the variable names got changed
+
+str(df)
+## ugh... factors?...
+
+## you can fix that with
+df <- read.csv(here("count_data.csv"), stringsAsFactor = F)
+
+str(df)
+
+## let's look at a tibble now
+## note: all functions in the tidyverse will output tibbles
+## so if you use the tidyverse, you will end up with tibbles (but that's good!)
+## note also that tibbles will never coerce your strings as factors
+tbl <- read_csv(here("count_data.csv"))
+
+tbl
+#+END_src
+
+** Variable names
+
+Exercise: look at the stringr cheatsheet and try to find a function that will allow us to replace all "-" and " " by "_".
+
+** Dates
+
+*** date3
+
+*** date4
+
+* Making a reproducible example
+
+** The reprex package
+
+** How to provide data for a reprex
+
+*** Using dput()
+
+*** Removing as much as possible from the data before using dput()
+
+*** Creating data
+
+** Anonymising data
+
+Let's imagine now that our data contains sensitive information. This can be personal information, government data, etc. Or maybe we simply do not wish to make our data useable when we post it along with our paper or while we ask for help. We can anonymize the data ourselves as we just did by renaming the species ourselves. But when lots of data has to be anonymized, this can be very tedious. 
