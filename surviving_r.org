@@ -120,11 +120,11 @@ Go to Finder or Windows explorer now and make your file extensions visible
 
 * Finding information
 
-* In R itself
+** In R itself
 
 R, as well as any package you have installed, comes with a lot of documentation. This can be invaluable if you do not have internet access.
 
-** Manuals
+*** Manuals
 
 General manuals on R can be found by running:
 
@@ -132,7 +132,7 @@ General manuals on R can be found by running:
 help.start()
 #+END_SRC
 
-** Packages
+*** Packages
 
 To get information on a package called <package>, you can run:
 
@@ -154,7 +154,7 @@ Note that, for this to work, the package doesn't need to be loaded. But of cours
 
 In the case of packages hosted on CRAN, a pdf containing the information for all the package functions can also be download from the web. Such package manuals are easy to find by googling src_R[:eval no]{CRAN <package>}.
 
-** Functions
+*** Functions
 
 Any serious package contains the documentation of every function in help files.
 
@@ -168,15 +168,15 @@ For instance src_R[:eval no]{?map}.
 
 For this to work, the package containing this function needs to be loaded. So the above line will only work if you have previously loaded the package src_R[:eval no]{purrr}. Alternatively, you can run src_R[:eval no]{?purrr::map}.
 
-*** How to make sense of the function help files?
+**** How to make sense of the function help files?
 
 Let's walk through some help files together.
 
-** Vignettes
+*** Vignettes
 
 Packages also sometime contain additional information in "vignettes": tutorials on how to use the package.
 
-*** List vignettes
+**** List vignettes
 
 To list all the vignettes for a package called <package>, run:
 
@@ -200,7 +200,7 @@ To list all the vignettes from all *installed* packages:
 vignette()
 #+END_SRC
 
-*** Open a vignette
+**** Open a vignette
 
 Once you have found the name of a vignette pertaining to the topic you are interested in, you can open it with:
 
@@ -210,7 +210,7 @@ vignette("<vignette>")
 
 For instance src_R[:eval no]{vignette("two-table")}.
 
-** Versions information
+*** Versions information
 
 R and all loaded packages:
 
@@ -234,13 +234,13 @@ R only:
 version
 #+END_src
 
-* Online
+** Online
 
-** Online books
+*** Online books
 
-Several excellent books on R are-on top of their paper version-available as [[https://bookdown.org/][bookdowns]]. There are also great manuals and tutorials.
+Several excellent books on R are-on top of their paper version-available as [[https://bookdown.org/][bookdowns]].
 
-*** Getting started with R and the tidyverse
+**** Getting started with R and the tidyverse
 
 The book [[http://r4ds.had.co.nz/index.html][R for Data Science by Garrett Grolemund and Hadley Wickham]] is a must read for all beginner/intermediate R users, as well as advanced users not familiar with the tidyverse. This book will get you started with good habits and is an excellent introduction to R.
 
@@ -256,7 +256,7 @@ Go to this book right now (you can find it by googling "r for data science") and
 - 20 Vectors
 #+END_definition
 
-*** Writing readable and well-formatted code
+**** Writing readable and well-formatted code
 
 While syntax matters greatly in code execution (e.g. missing quotes, commas, or parenthesis will affect the meaning of your code), R will equally run formatted and non-formatted code.
 
@@ -264,23 +264,23 @@ Code, however, should not simply be written for the machine and should be made a
 
 Of note, when you work on someone else's code, you should adopt their style, again, for the sake of consistency.
 
-*** Understanding R as a programming language
+**** Understanding R as a programming language
 
 The book [[https://adv-r.hadley.nz/][Advanced R by Hadley Wickham]] will give you a better understanding of R as a programming language and help you get to the next level of R writing. Don't get turned off by the term "advanced". The book is very readable and is useful for R users at all levels to better understand the various types of data, the functioning of R, etc.
 
 [[http://adv-r.had.co.nz/][The first edition]] of that book, which focuses on base R rather than on the tidyverse, is also well worth a read.
 
-*** Writing your own packages
+**** Writing your own packages
 
 The book [[http://r-pkgs.had.co.nz/][R packages by Hadley Wickham]] will get you started if you want to write your own packages.
 
 The on-line manual [[https://cran.r-project.org/doc/manuals/R-exts.html][Writing R Extensions by the R Core Team]] gives a more dense and exhaustive documentation if you need something that is not in Hadley's book.
 
-*** GIS in R
+**** GIS in R
 
 The tutorials [[https://data.cdrc.ac.uk/tutorial/an-introduction-to-spatial-data-analysis-and-visualisation-in-r][An Introduction to Spatial Data Analysis and Visualisation in R by Guy Lansley and James Cheshire]] as well as the book [[https://geocompr.robinlovelace.net/][Geocomputation with R by Robin Lovelace, Jakub Nowosad, and Jannes Muenchow]] will teach you how to map data and conduct spacial data analysis in R or how to bridge R and [[https://www.qgis.org/en/site/][QGIS]].
 
-** Cheatsheets
+*** Cheatsheets
 
 Who doesn't love cheatsheets? Good news: RStudio and others created [[https://www.rstudio.com/resources/cheatsheets/][great cheatsheets]] on the tidyverse and a few other packages. If you use the tidyverse, those are absolute must have.
 
@@ -296,7 +296,7 @@ Go to that page right now (you can find it by googling "rstudio cheatsheet") and
 
 /Note: some of these cheatsheet are accessible from within RStudio, under the help menu./
 
-** Other online resources
+*** Other online resources
 
 # check linda. mention datacamp.
 
@@ -316,17 +316,17 @@ The SFU Research Commons offers [[https://www.lib.sfu.ca/about/branches-depts/rc
 
 The Research Commons is also a partner of [[https://software-carpentry.org/][Software Carpentry]] and [[http://www.datacarpentry.org/][Data Carpentry]], now merged under [[http://carpentries.org/][the Carpentries]]. The Carpentries organize workshops-including workshops on R-regularly. You can find their upcoming workshops on their [[https://carpentries.org/][website]].
 
-** Library
+** The library
 
 The SFU library owns several classic books on R. Don't hesitate to talk to a librarian if you need help finding them. And remember that you can also suggest new book acquisitions if important books are missing from the collection.
+
+It is worth noting that R development is very active. While the information in books remains valid, new packages are constantly being added which allow for novel approaches. And you are much more likely to find recent information online than in books.
 
 ** The Scientific Programming Study Group
 
 [[http://sciprog.ca/][SciProg]], short for Scientific Programming Study Group, is an SFU student lead group open to anyone interested in learning or sharing programming resources through workshops, hackathons, and other events. R workshops are regularly offered. If you are interested in learning about a particular topic (or if you are interested in giving workshops), get in touch!
 
 * Trouble-shooting
-
-
 
 #+BEGIN_red
 1. *Read the error message**
